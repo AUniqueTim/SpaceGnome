@@ -1,32 +1,3 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEditor;
-using Cradle;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
-[CustomEditor(typeof(TwineTextPlayerElement))]
-public class TwineTextPlayerElementEditor : Editor {
-
-	public static ObjectIDGenerator idGenerator = new ObjectIDGenerator();
-
-	public override void OnInspectorGUI()
-	{
-		StoryOutput output = ((TwineTextPlayerElement)target).SourceOutput;
-
-		bool unused;
-
-		EditorGUILayout.LabelField("Type", output.GetType().Name);
-		EditorGUILayout.LabelField("Id", idGenerator.GetId(output, out unused).ToString());
-		EditorGUILayout.LabelField("Name", output.Name);
-		EditorGUILayout.LabelField("Text", output.Text);
-
-		EditorGUILayout.LabelField("Style");
-		EditorGUI.indentLevel++;
-		StoryStyle style = output.GetAppliedStyle();
-		foreach(var pair in style)
-			EditorGUILayout.LabelField(pair.Key, pair.Value != null ? pair.Value.ToString() : null);
-		EditorGUI.indentLevel--;
-		
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c3963147e1f04fee373cf2975fdb7b54a83f3c437bb4bc8383f8538d3d6b40ef
+size 974

@@ -1,32 +1,3 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{FF3D0FFE-EFB5-D706-B702-99B9CB6DE7BC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{3F2D929A-8BF8-CA94-8485-70CFF5160D56}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{B6A5A675-F791-D785-D8AD-80D009AAD935}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FF3D0FFE-EFB5-D706-B702-99B9CB6DE7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF3D0FFE-EFB5-D706-B702-99B9CB6DE7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF3D0FFE-EFB5-D706-B702-99B9CB6DE7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF3D0FFE-EFB5-D706-B702-99B9CB6DE7BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F2D929A-8BF8-CA94-8485-70CFF5160D56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F2D929A-8BF8-CA94-8485-70CFF5160D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F2D929A-8BF8-CA94-8485-70CFF5160D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F2D929A-8BF8-CA94-8485-70CFF5160D56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6A5A675-F791-D785-D8AD-80D009AAD935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6A5A675-F791-D785-D8AD-80D009AAD935}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6A5A675-F791-D785-D8AD-80D009AAD935}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6A5A675-F791-D785-D8AD-80D009AAD935}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+version https://git-lfs.github.com/spec/v1
+oid sha256:43ded5ecf80a9293d447faa0e1d62da63cf269322d9d35ba7b38b9726af85501
+size 1885

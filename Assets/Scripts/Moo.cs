@@ -1,16 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Moo : MonoBehaviour
-{
-
-    public AudioSource moo;
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            moo.Play();
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8c56607a5bd0e313a4451284e35ff659b40f04e2bb938547fbdd6b600ee2ee39
+size 307
