@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8954c1c5fe4ea56ad0bb3d94f5db6a3aac5543c289b44b48c8d2948ee23116bb
-size 656
+﻿using System.Collections.Generic;
+
+namespace UnityEngine.ProBuilder.KdTree
+{
+	interface IKdTree<TKey, TValue> : IEnumerable<KdTreeNode<TKey, TValue>>
+	{
+		bool Add(TKey[] point, TValue value);
+
+		bool TryFindValueAt(TKey[] point, out TValue value);
+
+		TValue FindValueAt(TKey[] point);
+
+		bool TryFindValue(TValue value, out TKey[] point);
+
+		TKey[] FindValue(TValue value);
+
+		KdTreeNode<TKey, TValue>[] RadialSearch(TKey[] center, TKey radius, int count);
+
+		void RemoveAt(TKey[] point);
+
+		void Clear();
+
+		KdTreeNode<TKey, TValue>[] GetNearestNeighbours(TKey[] point, int count = int.MaxValue);
+
+		int Count { get; }
+	}
+}

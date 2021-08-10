@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:69e1c8c7531f26a28766e4bd969811be59ac336e1bcc6f1741ad68ec429e764f
-size 551
+# ![Conform Normals icon](images/icons/Object_ConformNormals.png) Conform Normals (Objects)
+
+The __Conform Normals__ tool sets all face normals on the selected object to the same relative direction. 
+
+ProBuilder uses the direction that most of the faces on the object are already facing.
+
+![Change the normals on all faces of the selected object](images/Object_ConformNormals.png)
+
+In this example, the majority of the normals on this shape are pointing towards the Camera, so after applying this tool, all normals point in the same direction.

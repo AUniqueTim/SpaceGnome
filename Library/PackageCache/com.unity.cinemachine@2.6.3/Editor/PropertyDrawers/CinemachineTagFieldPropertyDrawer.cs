@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:521a63e8130e9c3878bfe1e6b31844c4ff934a606e1c678e6e46428464ca605e
-size 1261
+using UnityEngine;
+using UnityEditor;
+
+namespace Cinemachine.Editor
+{
+    [CustomPropertyDrawer(typeof(TagFieldAttribute))]
+    internal sealed class CinemachineTagFieldPropertyDrawer : PropertyDrawer
+    {
+        const float hSpace = 2;
+        private string tagValue = "";
+        GUIContent clearText = new GUIContent("Clear", "Set the tag to empty");
+        
+        public override void OnGUI(Rect rect, SerializedProperty property, GUIContent label)
+        {
+            var textDimensions = GUI.skin.button.CalcSize(clearText);
+
+            rect.width -= textDimensions.x + hSpace;
+            
+            tagValue = property.stringValue;
+            EditorGUI.showMixedValue = property.hasMultipleDifferentValues;
+            EditorGUI.BeginChangeCheck();
+            tagValue = EditorGUI.TagField(rect, label, tagValue);
+            if (EditorGUI.EndChangeCheck())
+                property.stringValue = tagValue;
+            EditorGUI.showMixedValue = false;
+
+            rect.x += rect.width + hSpace; rect.width = textDimensions.x; rect.height -=1;
+            GUI.enabled = tagValue.Length > 0;
+            if (GUI.Button(rect, clearText))
+                property.stringValue = string.Empty;
+            GUI.enabled = true;
+        }
+    }
+}

@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:25785b94a1262ff255ff08ef06b6a6a11fdc23cd44ca6fa5b486ba22eab92b0a
-size 1467
+using System.Collections.Generic;
+using UnityEngine.UI;
+
+class TestButton : Button
+{
+    public bool isStateNormal { get { return currentSelectionState == SelectionState.Normal; } }
+    public bool isStateHighlighted { get { return currentSelectionState == SelectionState.Highlighted; } }
+    public bool isStatePressed { get { return currentSelectionState == SelectionState.Pressed; } }
+    public bool isStateDisabled { get { return currentSelectionState == SelectionState.Disabled; } }
+
+    private bool IsTransitionTo(int index, SelectionState selectionState)
+    {
+        return index < m_StateTransitions.Count && m_StateTransitions[index] == selectionState;
+    }
+
+    public bool IsTransitionToNormal(int index) { return IsTransitionTo(index, SelectionState.Normal); }
+    public bool IsTransitionToHighlighted(int index) { return IsTransitionTo(index, SelectionState.Highlighted); }
+    public bool IsTransitionToPressed(int index) { return IsTransitionTo(index, SelectionState.Pressed); }
+    public bool IsTransitionToDisabled(int index) { return IsTransitionTo(index, SelectionState.Disabled); }
+
+    private readonly List<SelectionState> m_StateTransitions = new List<SelectionState>();
+
+    public int StateTransitionCount { get { return m_StateTransitions.Count; } }
+
+    protected override void DoStateTransition(SelectionState state, bool instant)
+    {
+        m_StateTransitions.Add(state);
+        base.DoStateTransition(state, instant);
+    }
+}

@@ -1,3 +1,66 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02c82bbeb7e5a23f59ab9c86dd2c4d190a8ec6e812425c636acfce5ee45db98b
-size 1518
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class InputsManager : MonoBehaviour
+{
+    public CameraRotation cameraRotation;
+
+    //START SINGLETON
+
+
+    public static InputsManager instance;
+    public static InputsManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<InputsManager>();
+                if (instance == null)
+                {
+                    GameObject singleton = new GameObject();
+                    singleton.AddComponent<InputsManager>();
+                    singleton.name = "(Singleton)  InputsManager";
+                }
+            }
+            return instance;
+        }
+    }
+    public void Awake()
+    {
+        instance = this;
+
+    }
+    public float MouseX;
+    public float MouseY;
+
+    [SerializeField] private float maxXRotation;
+    [SerializeField] private float maxYRotation;
+
+
+    public void OnRotationX(InputAction.CallbackContext Context)
+    {
+        MouseX = Context.ReadValue<float>();
+        if (MouseX >= maxXRotation)
+        {
+            MouseX = maxXRotation;
+        }
+    }
+
+    public void OnRotationY(InputAction.CallbackContext Context)
+    {
+        MouseY = Context.ReadValue<float>();
+        if (MouseY >= maxYRotation)
+        {
+            MouseY = maxYRotation;
+        }
+    }
+
+    private void Update()
+    {
+        //OnRotationX(Context);
+        //OnRotationY();
+    }
+}

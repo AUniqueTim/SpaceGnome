@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:08a3ca364ccb18573427ec9f02e33251040c5b7013365f8ad92ed66037a758a5
-size 273
+# Known Issues
+
+* **Contents of a ModalUtility window are invisible when launched from a Unity Context Menu on 2020.3LTS, 2021.1, and 2021.2 (Active).**
+
+* **Enabling the Plastic SCM for Unity package disables the standard VCS integration option in the Project Settings.**

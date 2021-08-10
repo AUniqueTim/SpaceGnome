@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5c58347ca795b011d71d936476dd62ef957d322a1ad78810515d2954dcc6900e
-size 637
+using UnityEditor;
+using UnityEngine;
+
+namespace Cinemachine.Editor
+{
+    [CustomEditor(typeof(CinemachineHardLockToTarget))]
+    internal sealed class CinemachineHardLockToTargetEditor : BaseEditor<CinemachineHardLockToTarget>
+    {
+        public override void OnInspectorGUI()
+        {
+            BeginInspector();
+            if (Target.FollowTarget == null)
+                EditorGUILayout.HelpBox(
+                    "Hard Lock requires a Follow Target.  Change Body to Do Nothing if you don't want a Follow target.",
+                    MessageType.Warning);
+            DrawRemainingPropertiesInInspector();
+        }
+    }
+}

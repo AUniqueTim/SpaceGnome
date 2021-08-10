@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1cfe2f808f0e263c6f4b096a3701a480295c6190cce956b7da67fe356e66a33b
-size 476
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.AddOns.Editor")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.Tests")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.Editor.Tests")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.MenuItems")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.Debug.Editor")]

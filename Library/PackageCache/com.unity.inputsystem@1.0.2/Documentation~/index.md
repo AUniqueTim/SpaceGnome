@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f1f37e0b85a3a6e2faf59ddb774334ee3d2b7eeb89754549b403240ad101a80e
-size 429
+# Input System
+
+The Input System package implements a system to use any kind of Input Device to control your Unity content. It's intended to be a more powerful, flexible, and configurable replacement for Unity's classic Input Manager (the `UnityEngine.Input` class).
+
+To get started, see the [Installation](Installation.md) and [Quick Start Guide](QuickStartGuide.md) sections.
+
+![MyGameActions](Images/MyGameActions.png)

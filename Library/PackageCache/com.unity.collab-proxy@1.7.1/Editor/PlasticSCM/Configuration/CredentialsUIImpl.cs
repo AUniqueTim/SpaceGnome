@@ -1,3 +1,56 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d6337e73d9b585edd4164e8739f96ae7cdf27d52bc6eb7636ac592b1400d6d6d
-size 1658
+﻿using UnityEditor;
+
+using Codice.Client.Common;
+using Codice.Client.Common.Connection;
+using PlasticGui;
+using Unity.PlasticSCM.Editor.UI;
+
+namespace Unity.PlasticSCM.Editor.Configuration
+{
+    internal class CredentialsUiImpl : AskCredentialsToUser.IGui
+    {
+        internal CredentialsUiImpl(EditorWindow parentWindow)
+        {
+            mParentWindow = parentWindow;
+        }
+
+        AskCredentialsToUser.DialogData AskCredentialsToUser.IGui.AskUserForCredentials(string servername)
+        {
+            AskCredentialsToUser.DialogData result = null;
+
+            GUIActionRunner.RunGUIAction(delegate
+            {
+                result = CredentialsDialog.RequestCredentials(
+                        servername, mParentWindow);
+            });
+
+            return result;
+        }
+
+        void AskCredentialsToUser.IGui.ShowSaveProfileErrorMessage(string message)
+        {
+            GUIActionRunner.RunGUIAction(delegate
+            {
+                GuiMessage.ShowError(string.Format(
+                    PlasticLocalization.GetString(
+                        PlasticLocalization.Name.CredentialsErrorSavingProfile),
+                    message));
+            });
+        }
+
+        AskCredentialsToUser.DialogData AskCredentialsToUser.IGui.AskUserForSSOCredentials(string cloudServer)
+        {
+            AskCredentialsToUser.DialogData result = null;
+
+            GUIActionRunner.RunGUIAction(delegate
+            {
+                result = SSOCredentialsDialog.RequestCredentials(
+                    cloudServer, mParentWindow);
+            });
+
+            return result;
+        }
+
+        EditorWindow mParentWindow;
+    }
+}

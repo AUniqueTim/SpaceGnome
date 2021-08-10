@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:57c2bf2f15917ca40caf384e6af3203c20eb24c1976036a916087a20117201b6
-size 1177
+using System;
+using System.Runtime.InteropServices;
+using UnityEngine.InputSystem.Utilities;
+
+namespace UnityEngine.InputSystem.LowLevel
+{
+    /// <summary>
+    /// A command to tell the runtime to reset the device to it's default state.
+    /// </summary>
+    /// <remarks>
+    /// This triggers an event being sent from the device that represents an empty, or untouched device
+    /// </remarks>
+    /// <seealso cref="RequestSyncCommand"/>
+    [StructLayout(LayoutKind.Explicit, Size = InputDeviceCommand.kBaseCommandSize)]
+    public unsafe struct RequestResetCommand : IInputDeviceCommandInfo
+    {
+        public static FourCC Type { get { return new FourCC('R', 'S', 'E', 'T'); } }
+
+        internal const int kSize = InputDeviceCommand.kBaseCommandSize;
+
+        [FieldOffset(0)]
+        public InputDeviceCommand baseCommand;
+
+        public FourCC typeStatic
+        {
+            get { return Type; }
+        }
+
+        public static RequestResetCommand Create()
+        {
+            return new RequestResetCommand
+            {
+                baseCommand = new InputDeviceCommand(Type, kSize)
+            };
+        }
+    }
+}

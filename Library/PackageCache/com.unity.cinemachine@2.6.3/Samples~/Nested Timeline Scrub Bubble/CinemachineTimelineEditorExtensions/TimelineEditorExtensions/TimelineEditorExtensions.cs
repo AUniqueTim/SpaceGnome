@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:729e5baf26764e560b95cdbf5bbb97a48725c07b969bde9d06a41894273c59db
-size 330
+﻿using UnityEditor.Timeline;
+
+public class TimelineEditorExtensions 
+{
+    public static double ToLocalTime(double globalTime)
+    {
+        var window = TimelineEditor.window as TimelineWindow;
+        if (window == null)
+            return globalTime;
+        return window.state.editSequence.ToLocalTime(globalTime);
+    }
+}

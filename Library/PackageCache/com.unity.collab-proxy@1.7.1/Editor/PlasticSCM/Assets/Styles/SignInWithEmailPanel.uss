@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:065f4c21d85dde94ef9392e4c7347c464e054d872baa49428488ef158cb4a799
-size 426
+﻿#windowContainer {
+    height: 100%;
+    flex-grow: 1;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+#loginContainer TextField {
+    flex-direction: column;
+    font-size: 14px;
+}
+
+#emailNotification, #passwordNotification {
+    height: 15px;
+    margin-bottom: 5px;
+}
+
+#progressContainer {
+    height: 15px;
+    margin-top: 15px;
+}
+
+#buttonContainer {
+    margin-left: 42.5%;
+}
+
+#signIn,
+#back {
+    width: 125px;
+}

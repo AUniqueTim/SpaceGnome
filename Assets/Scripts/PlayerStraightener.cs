@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:26455ab4ce47909f24efdeada2d8ead7b7b0fe5789989f4fd7d7c048c8f8993a
-size 410
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerStraightener : MonoBehaviour
+{
+    [SerializeField] GameObject playerToBeStraightened;
+
+   [System.Obsolete]
+   public void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag == "Player")
+        {
+            playerToBeStraightened.transform.rotation.SetEulerRotation(0, 0, 0);
+        }
+    }
+}

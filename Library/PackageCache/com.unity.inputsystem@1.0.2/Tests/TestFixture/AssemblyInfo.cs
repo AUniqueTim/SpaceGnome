@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a747c565ee97641210c22289f5b451cba14c33ae05fce997de1b5b201e207bf2
-size 433
+using System.Reflection;
+using System.Runtime.CompilerServices;
+
+// Keep this in sync with "Packages/com.unity.inputsystem/package.json".
+// NOTE: Unfortunately, System.Version doesn't use semantic versioning so we can't include
+//       "-preview" suffixes here.
+[assembly: AssemblyVersion("1.0.2")]
+[assembly: InternalsVisibleTo("Unity.InputSystem.Tests.Editor")]
+[assembly: InternalsVisibleTo("Unity.InputSystem.Tests")]

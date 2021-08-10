@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4e2f6b463591e63f41626eee76a01e33e50ed3583b8c186c746f6260a620e7c
-size 734
+# ![Shrink Selection](images/icons/Selection_Shrink.png) Shrink Selection
+
+The __Shrink Selection__ tool removes the elements on the perimeter of the current selection. It performs the opposite action of the [Grow Selection](Selection_Grow.md) tool.
+
+![Shrink Selection Example](images/ShrinkSelection_Example.png)
+
+In this example:
+* **Left image**: Five faces are selected.
+* **Right image**: The __Shrink Selection__ reduces the selection down to just the central square.
+
+This tool is available in the [vertex, edge, and face modes](modes.md).
+
+> **Tip:** You can also use this tool with the **Alt/Opt+Shift+G** hotkey, or from the ProBuilder menu (**Tools** > **ProBuilder** > **Selection** > **Shrink Selection**).

@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:244295f8c1dbeea4e3f5c7cb4a02bdeeea98c2e51dbe4fef40ab68561012cd50
-size 1174
+using UnityEngine.ProBuilder;
+using UnityEngine;
+
+namespace UnityEditor.ProBuilder.Actions
+{
+    sealed class OpenVertexColorEditor : MenuAction
+    {
+        public override ToolbarGroup group { get { return ToolbarGroup.Tool; } }
+        public override Texture2D icon { get { return IconUtility.GetIcon("Toolbar/Panel_VertColors", IconSkin.Pro); } }
+        public override TooltipContent tooltip { get { return s_Tooltip; } }
+        public override string menuTitle { get { return "Vertex Colors"; } }
+
+        static readonly TooltipContent s_Tooltip = new TooltipContent
+            (
+                "Vertex Colors Editor",
+                "Opens the Vertex Color Palette.\n\nApply using Face mode for hard-edged colors.\nApply using Edge or Vertex mode for soft, blended colors."
+            );
+
+        public override bool enabled
+        {
+            get { return ProBuilderEditor.instance != null; }
+        }
+
+        public override ActionResult DoAction()
+        {
+            VertexColorPalette.MenuOpenWindow();
+            return new ActionResult(ActionResult.Status.Success, "Open Vertex Color Window");
+        }
+    }
+}

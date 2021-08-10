@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:528e757a30bd508b9d7e487947efbb403dcfb32c3df19c8137ee03601f746db1
-size 926
+using System;
+
+namespace UnityEngine.ProGrids
+{
+	/// <summary>
+	/// Apply this attribute to a MonoBehaviour to disable grid snapping on the parent object.
+	/// </summary>
+	[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
+	public class ProGridsNoSnapAttribute : Attribute
+	{
+	}
+
+	/// <summary>
+	/// Tells ProGrids to check for a function named `bool IsSnapEnabled()` on this object. In this way you can
+	/// programmatically enable or disable snapping.
+	/// </summary>
+	[Obsolete("Use IConditionalSnap interface")]
+	[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
+	public class ProGridsConditionalSnapAttribute : Attribute
+	{
+	}
+
+	/// <summary>
+	/// Implement this interface in a MonoBehaviour to dynamically enable or disabled grid snapping on the parent
+	/// GameObject.
+	/// </summary>
+	public interface IConditionalSnap
+	{
+		bool snapEnabled { get; }
+	}
+}

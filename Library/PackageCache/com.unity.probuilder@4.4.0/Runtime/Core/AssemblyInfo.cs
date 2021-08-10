@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:47537f9701f16afee1583d5aaee545a16ea5095a024757574ca7a9fec9412860
-size 767
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.MeshOperations")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.Editor")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.Tests")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.Tests.Framework")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.Tests.Slow")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.Editor.Tests")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.Debug.Editor")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Unity.ProBuilder.AddOns.Editor")]

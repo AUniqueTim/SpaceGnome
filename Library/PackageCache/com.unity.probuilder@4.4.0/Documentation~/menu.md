@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6e0b82dcf1d00f1f888b4a2ae91df3298645e5987c30f62b600ae6c583239993
-size 860
+# The ProBuilder menu
+
+Use the ProBuilder menu to access most of the ProBuilder editors and tools, and the special tools that are only available through this menu. For example, you can access tools to repair and debug ProBuilder, or access the experimental [Boolean](boolean.md) tool. 
+
+![The ProBuilder menu](images/pb_menu.png)
+
+The ProBuilder menu items include the following:
+
+* [ProBuilder Window](menu-open.md)
+* [Editors](menu-editors.md)
+* [Dimensions Overlay](menu-dimover.md)
+* [Selection](menu-selection.md)
+* [Interaction](menu-interaction.md)
+* [Object](menu-object.md)
+* [Geometry](menu-geometry.md)
+* [Materials](menu-materials.md)
+* [Vertex Colors](menu-vertexcolors.md)
+* [Experimental](menu-experimental.md)
+* [Repair](menu-repair.md)
+* [Export](menu-export.md)
+* [Debug](menu-debug.md)
+* [Actions](menu-actions.md)
+
+

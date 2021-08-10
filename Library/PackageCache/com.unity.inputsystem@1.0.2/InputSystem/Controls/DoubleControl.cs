@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6db01f678e112089ec0d91ba9c0fdd01b7410ac6cfe222b63796a8d70dc574bd
-size 874
+using UnityEngine.InputSystem.LowLevel;
+
+namespace UnityEngine.InputSystem.Controls
+{
+    /// <summary>
+    /// A control reading a <see cref="double"/>.
+    /// </summary>
+    [Scripting.Preserve]
+    public class DoubleControl : InputControl<double>
+    {
+        /// <summary>
+        /// Default-initialize the control.
+        /// </summary>
+        public DoubleControl()
+        {
+            m_StateBlock.format = InputStateBlock.FormatDouble;
+        }
+
+        /// <inheritdoc/>
+        public override unsafe double ReadUnprocessedValueFromState(void* statePtr)
+        {
+            return m_StateBlock.ReadDouble(statePtr);
+        }
+
+        /// <inheritdoc/>
+        public override unsafe void WriteValueIntoState(double value, void* statePtr)
+        {
+            m_StateBlock.WriteDouble(statePtr, value);
+        }
+    }
+}

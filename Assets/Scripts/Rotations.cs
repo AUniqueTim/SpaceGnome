@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4493825a2d62f5105ca32f93d9cd0408d6c058b475322071874ccf7e9667516d
-size 481
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Rotations : MonoBehaviour
+{
+
+    [SerializeField] public GameObject rotatedObject;
+    [SerializeField] float rotationAngle;
+    [SerializeField] Vector3 rotationPoint;
+    [SerializeField] GameObject rotationAnchor;
+
+    void FixedUpdate()
+    {
+
+        rotatedObject.transform.RotateAround(rotationPoint, rotationAnchor.transform.position, rotationAngle * Time.deltaTime);
+    }
+
+}

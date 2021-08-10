@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6fe214cec0f5ac5422f2c0b2c5bb00b6dc32e0d37e994ee442ac191b068ccb6b
-size 1072
+using UnityEngine;
+using UnityEditor;
+
+namespace Cinemachine.Editor
+{
+    [CustomEditor(typeof(CinemachineBasicMultiChannelPerlin))]
+    internal sealed class CinemachineBasicMultiChannelPerlinEditor 
+        : BaseEditor<CinemachineBasicMultiChannelPerlin>
+    {
+        private void OnEnable()
+        {
+            NoiseSettingsPropertyDrawer.InvalidateProfileList();
+        }
+
+        public override void OnInspectorGUI()
+        {
+            BeginInspector();
+            if (FindProperty(x => x.m_NoiseProfile).objectReferenceValue == null)
+                EditorGUILayout.HelpBox(
+                    "A Noise Profile is required.  You may choose from among the NoiseSettings assets defined in the project.",
+                    MessageType.Warning);
+            DrawRemainingPropertiesInInspector();
+
+            Rect rect = EditorGUILayout.GetControlRect(true);
+            rect.width -= EditorGUIUtility.labelWidth; rect.x += EditorGUIUtility.labelWidth;
+            if (GUI.Button(rect, "New random seed"))
+                Target.ReSeed();
+        }
+    }
+}

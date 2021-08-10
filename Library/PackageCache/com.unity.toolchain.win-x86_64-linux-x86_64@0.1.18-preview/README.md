@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b30663a3e1b82d62f320e01345e39382d791994e2b16bab066da7f41af836d0
-size 151
+# com.unity.toolchain.win-x86_64-linux-86_64
+
+This package provides a clang toolchain for building linux x86_64 players on a windows x86_64 host.
+

@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9daa472ace5f175376bd185d96f34c8b78a06203884d35882d3442da8aa02bd6
-size 777
+Shader "Hidden/ProBuilder/SelectionPicker"
+{
+    Properties {}
+
+    SubShader
+    {
+        Tags { "ProBuilderPicker"="EdgePass" }
+        Lighting Off
+        ZTest LEqual
+        ZWrite On
+        Cull Off
+        Blend Off
+
+        UsePass "Hidden/ProBuilder/EdgePicker/EDGES"
+    }
+
+    SubShader
+    {
+        Tags { "ProBuilderPicker"="VertexPass" }
+        Lighting Off
+        ZTest LEqual
+        ZWrite On
+        Cull Off
+        Blend Off
+
+        UsePass "Hidden/ProBuilder/VertexPicker/VERTICES"
+    }
+
+    SubShader
+    {
+        Tags { "ProBuilderPicker"="Base" }
+        Lighting Off
+        ZTest LEqual
+        ZWrite On
+        Cull Back
+        Blend Off
+
+        UsePass "Hidden/ProBuilder/FacePicker/BASE"
+    }
+}

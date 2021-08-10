@@ -1,3 +1,55 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aa90c51f9d3a4dd73d1ccee9e0191a5b2f9f9291d880d6bc24f505a2b8be6d70
-size 1242
+Shader "Hidden/PostProcessing/Copy"
+{
+    HLSLINCLUDE
+
+        #include "Packages/com.unity.postprocessing/PostProcessing/Shaders/StdLib.hlsl"
+
+        TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex);
+
+        float4 Frag(VaryingsDefault i) : SV_Target
+        {
+            float4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoordStereo);
+            return color;
+        }
+
+        float4 FragKillNaN(VaryingsDefault i) : SV_Target
+        {
+            float4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoordStereo);
+
+            if (AnyIsNan(color))
+            {
+                color = (0.0).xxxx;
+            }
+
+            return color;
+        }
+
+    ENDHLSL
+
+    SubShader
+    {
+        Cull Off ZWrite Off ZTest Always
+
+        // 0 - Fullscreen triangle copy
+        Pass
+        {
+            HLSLPROGRAM
+
+                #pragma vertex VertDefault
+                #pragma fragment Frag
+
+            ENDHLSL
+        }
+
+        // 1 - Fullscreen triangle copy + NaN killer
+        Pass
+        {
+            HLSLPROGRAM
+
+                #pragma vertex VertDefault
+                #pragma fragment FragKillNaN
+
+            ENDHLSL
+        }
+    }
+}

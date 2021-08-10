@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:80c55db1953170f944522e303a1cd80061a68c382d4c9d0f63b5f17cc1d3efa3
-size 908
+﻿using UnityEngine;
+
+public class ActivateOnKeypress : MonoBehaviour
+{
+    public KeyCode ActivationKey = KeyCode.LeftControl;
+    public int PriorityBoostAmount = 10;
+    public GameObject Reticle;
+
+    Cinemachine.CinemachineVirtualCameraBase vcam;
+    bool boosted = false;
+
+    void Start()
+    {
+        vcam = GetComponent<Cinemachine.CinemachineVirtualCameraBase>();
+    }
+
+    void Update()
+    {
+        if (vcam != null)
+        {
+            if (Input.GetKey(ActivationKey))
+            {
+                if (!boosted)
+                {
+                    vcam.Priority += PriorityBoostAmount;
+                    boosted = true;
+                }
+            }
+            else if (boosted)
+            {
+                vcam.Priority -= PriorityBoostAmount;
+                boosted = false;
+            }
+        }
+        if (Reticle != null)
+            Reticle.SetActive(boosted);
+    }
+}

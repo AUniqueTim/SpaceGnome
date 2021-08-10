@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9ba88ab582f913276f4fa072981472f87e77955081da6e6850a6b5558ef81189
-size 340
+{
+    "name": "com.unity.postprocessing",
+    "version": "3.0.2",
+    "displayName": "Post Processing",
+    "unity": "2018.4",
+    "description": "The post-processing stack (v2) comes with a collection of effects and image filters you can apply to your cameras to improve the visuals of your games.",
+    "dependencies": {
+    }
+}

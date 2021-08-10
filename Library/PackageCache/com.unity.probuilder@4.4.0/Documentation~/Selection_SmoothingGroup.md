@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:57c2cf79dba10e882a5bc7609aeca81a1ba8cb94f944f5259391dfa818e62fd3
-size 805
+# ![Select By Smoothing Group tool](images/icons/Selection_SelectBySmoothingGroup.png) Select Smoothing Group
+
+Use the **Select Smoothing Group** tool inside the [Smooth Group Editor window](smoothing-groups.md) to select faces matching the current smoothing group. 
+
+To use this tool: 
+
+1. Open the **Smooth Group Editor** window. 
+
+2. Click any face with a smoothing group defined. 
+
+	> ***Note:*** The tool doesn't shrink the current selection, so it's best to start with as small a selection as possible.
+
+3. Click the ![Select By Smoothing Group tool](images/icons/Selection_SelectBySmoothingGroup.png) Select Smoothing Group button. 
+
+> ***Tip:*** You can also access this tool from the ProBuilder menu (**Tools** > **ProBuilder** > **Selection** > **Select Smoothing Group**).
+
+
+

@@ -1,3 +1,57 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2a297d56858d2055233643a5f6b18b26bc55ec25299db9a506d29c26d6e56eec
-size 2337
+using System;
+using System.Collections;
+using System.Linq;
+using System.Reflection;
+using NUnit.Framework.Internal;
+using NUnit.Framework.Internal.Commands;
+using Unity.Profiling;
+using UnityEngine.TestRunner.NUnitExtensions.Runner;
+
+namespace UnityEngine.TestTools
+{
+    internal class EnumerableSetUpTearDownCommand : BeforeAfterTestCommandBase<MethodInfo>
+    {
+        public EnumerableSetUpTearDownCommand(TestCommand innerCommand)
+            : base(innerCommand, "SetUp", "TearDown")
+        {
+            if (Test.TypeInfo.Type != null)
+            {
+                BeforeActions = GetMethodsWithAttributeFromFixture(Test.TypeInfo.Type, typeof(UnitySetUpAttribute));
+                AfterActions = GetMethodsWithAttributeFromFixture(Test.TypeInfo.Type, typeof(UnityTearDownAttribute)).Reverse().ToArray();
+            }
+        }
+
+        private static MethodInfo[] GetMethodsWithAttributeFromFixture(Type fixtureType, Type setUpType)
+        {
+            MethodInfo[] methodsWithAttribute = Reflect.GetMethodsWithAttribute(fixtureType, setUpType, true);
+            return methodsWithAttribute.Where(x => x.ReturnType == typeof(IEnumerator)).ToArray();
+        }
+
+        protected override bool MoveAfterEnumerator(IEnumerator enumerator, Test test)
+        {
+            using (new ProfilerMarker(test.Name + ".TearDown").Auto())
+                return base.MoveAfterEnumerator(enumerator, test);
+        }
+
+        protected override bool MoveBeforeEnumerator(IEnumerator enumerator, Test test)
+        {
+            using (new ProfilerMarker(test.Name + ".Setup").Auto())
+                return base.MoveBeforeEnumerator(enumerator, test);
+        }
+
+        protected override IEnumerator InvokeBefore(MethodInfo action, Test test, UnityTestExecutionContext context)
+        {
+            return (IEnumerator)Reflect.InvokeMethod(action, context.TestObject);
+        }
+
+        protected override IEnumerator InvokeAfter(MethodInfo action, Test test, UnityTestExecutionContext context)
+        {
+            return (IEnumerator)Reflect.InvokeMethod(action, context.TestObject);
+        }
+
+        protected override BeforeAfterTestCommandState GetState(UnityTestExecutionContext context)
+        {
+            return context.SetUpTearDownState;
+        }
+    }
+}

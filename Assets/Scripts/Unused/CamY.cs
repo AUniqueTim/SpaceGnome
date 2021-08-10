@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e50b404b9f8605514843ff9d82fb588be08e2d41c0a83c97362922b9c826a11c
-size 995
+
+using UnityEngine;
+using Cinemachine;
+public class CamY : MonoBehaviour
+{
+
+    [SerializeField] private float sensitivityY;
+    [SerializeField] private float sensitivityScroll;
+    [SerializeField] private float maxZoom = 100;
+    [SerializeField] private float minZoom = 20;
+    [SerializeField] private float maxYOrbit = 20;
+    private CinemachineOrbitalTransposer vcam;
+    private float y;
+    private float scroll;
+
+    void Start()
+    {
+        vcam = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineOrbitalTransposer>();
+        scroll = -40;
+        y = 10;
+    }
+    void Update()
+    {
+
+        //y -= +Input.GetAxis("Mouse Y") * sensitivityY;
+        y = Mathf.Clamp(y, -maxYOrbit, maxYOrbit);
+        //vcam.m_FollowOffset.y = y;
+       // scroll += Input.GetAxis("Mouse ScrollWheel") * sensitivityScroll;
+        scroll = Mathf.Clamp(scroll, -maxZoom, -minZoom);
+        vcam.m_FollowOffset.x = scroll;
+        vcam.m_FollowOffset.z = scroll;
+    }
+}

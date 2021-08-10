@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:69a6314dd89964ad018784ba31317865926991ceb03cbe1dc2cd027c5ffdd937
-size 511
+using UnityEngine.Rendering.PostProcessing;
+
+namespace UnityEditor.Rendering.PostProcessing
+{
+    [PostProcessEditor(typeof(MotionBlur))]
+    internal sealed class MotionBlurEditor : DefaultPostProcessEffectEditor
+    {
+        public override void OnInspectorGUI()
+        {
+            if (RuntimeUtilities.isVREnabled)
+                EditorGUILayout.HelpBox("Motion Blur is available only for non-stereo cameras.", MessageType.Warning);
+
+            base.OnInspectorGUI();
+        }
+    }
+}

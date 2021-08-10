@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:57ff6c82a3a44a441b3507571497bf82672b0fdc91e25c37c4342ca5ffb0ee00
-size 833
+﻿using System.Linq;
+using UnityEngine;
+using System.IO;
+
+namespace UnityEditor.Experimental.Rendering
+{
+    static class PostProcessShaderIncludePath
+    {
+#if UNITY_2018_1_OR_NEWER && !UNITY_2018_3_OR_NEWER
+        [ShaderIncludePath]
+#endif
+        public static string[] GetPaths()
+        {
+            var srpMarker = Directory.GetFiles(Application.dataPath, "POSTFXMARKER", SearchOption.AllDirectories).FirstOrDefault();
+            var paths = new string[srpMarker == null ? 1 : 2];
+            var index = 0;
+            if (srpMarker != null)
+            {
+                paths[index] = Directory.GetParent(srpMarker).ToString();
+                index++;
+            }
+            paths[index] = Path.GetFullPath("Packages/com.unity.postprocessing");
+            return paths;
+        }
+    }
+}

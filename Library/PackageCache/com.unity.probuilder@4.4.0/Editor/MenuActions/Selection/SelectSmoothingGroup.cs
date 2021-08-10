@@ -1,3 +1,86 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc9ccaca57ece92cc0c5b76e6f70c8fd8e999e7d4f9b27e0d78fd987aa0cb3e0
-size 2646
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.ProBuilder.UI;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.ProBuilder;
+using UnityEditor.ProBuilder;
+
+namespace UnityEditor.ProBuilder.Actions
+{
+    sealed class SelectSmoothingGroup : MenuAction
+    {
+        public override ToolbarGroup group
+        {
+            get { return ToolbarGroup.Selection; }
+        }
+
+        public override Texture2D icon
+        {
+            get { return IconUtility.GetIcon("Toolbar/Selection_SelectBySmoothingGroup", IconSkin.Pro); }
+        }
+
+        public override TooltipContent tooltip
+        {
+            get { return s_Tooltip; }
+        }
+
+        static readonly TooltipContent s_Tooltip = new TooltipContent
+            (
+                "Select by Smooth",
+                "Selects all faces matching the selected smoothing groups."
+            );
+
+        public override SelectMode validSelectModes
+        {
+            get { return SelectMode.Face | SelectMode.TextureFace; }
+        }
+
+        public override bool enabled
+        {
+            get { return base.enabled && MeshSelection.selectedFaceCount > 0; }
+        }
+
+        public override bool hidden
+        {
+            get { return true; }
+        }
+
+        protected override MenuActionState optionsMenuState
+        {
+            get
+            {
+                if (enabled && ProBuilderEditor.selectMode == SelectMode.Face)
+                    return MenuActionState.VisibleAndEnabled;
+
+                return MenuActionState.Visible;
+            }
+        }
+
+        public override ActionResult DoAction()
+        {
+            UndoUtility.RecordSelection("Select Faces with Smoothing Group");
+
+            HashSet<int> selectedSmoothGroups = new HashSet<int>(MeshSelection.topInternal.SelectMany(x => x.selectedFacesInternal.Select(y => y.smoothingGroup)));
+
+            List<GameObject> newSelection = new List<GameObject>();
+
+            foreach (ProBuilderMesh pb in MeshSelection.topInternal)
+            {
+                IEnumerable<Face> matches = pb.facesInternal.Where(x => selectedSmoothGroups.Contains(x.smoothingGroup));
+
+                if (matches.Count() > 0)
+                {
+                    newSelection.Add(pb.gameObject);
+                    pb.SetSelectedFaces(matches);
+                }
+            }
+
+            Selection.objects = newSelection.ToArray();
+
+            ProBuilderEditor.Refresh();
+
+            return new ActionResult(ActionResult.Status.Success, "Select Faces with Smoothing Group");
+        }
+    }
+}

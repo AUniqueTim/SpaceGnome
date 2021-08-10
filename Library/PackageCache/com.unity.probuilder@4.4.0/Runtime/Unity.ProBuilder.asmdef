@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73407debfac2158fff9656aec6755b370e8e4f0a2013b6999c4a8d8030fefbe3
-size 648
+{
+    "name": "Unity.ProBuilder",
+    "references": [
+        "Unity.ProBuilder.Poly2Tri",
+        "Unity.ProBuilder.KdTree",
+        "Unity.RenderPipelines.HighDefinition.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.render-pipelines.high-definition",
+            "expression": "7.1.0",
+            "define": "HDRP_7_1_0_OR_NEWER"
+        }
+    ],
+    "noEngineReferences": false
+}

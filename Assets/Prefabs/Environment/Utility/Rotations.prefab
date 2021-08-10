@@ -1,3 +1,151 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7838e143a9bc5ec36cf50b98e64d6f052b8362c3fbebcc1908e9b734c41498b8
-size 4570
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3158754259194614970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3158754259194614974}
+  - component: {fileID: 3158754259194614973}
+  - component: {fileID: 3158754259194614975}
+  - component: {fileID: 3158754259194614972}
+  - component: {fileID: 262520512}
+  - component: {fileID: 262520510}
+  - component: {fileID: 262520509}
+  - component: {fileID: 262520508}
+  m_Layer: 0
+  m_Name: Rotations
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3158754259194614974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158754259194614970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 74.46392, y: -329.0144, z: 20.397997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3158754259194614973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158754259194614970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717ef1c2ae23bf8448819f2c2ea85dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatedObject: {fileID: 0}
+  rotationAngle: 360
+  rotationPoint: {x: 0, y: 1, z: 0}
+  rotationAnchor: {fileID: 0}
+--- !u!114 &3158754259194614975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158754259194614970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717ef1c2ae23bf8448819f2c2ea85dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatedObject: {fileID: 0}
+  rotationAngle: 40
+  rotationPoint: {x: 1, y: 1, z: 1}
+  rotationAnchor: {fileID: 0}
+--- !u!114 &3158754259194614972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158754259194614970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717ef1c2ae23bf8448819f2c2ea85dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatedObject: {fileID: 0}
+  rotationAngle: 45
+  rotationPoint: {x: 0, y: 1, z: 0}
+  rotationAnchor: {fileID: 0}
+--- !u!114 &262520512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158754259194614970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717ef1c2ae23bf8448819f2c2ea85dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatedObject: {fileID: 0}
+  rotationAngle: 50
+  rotationPoint: {x: 0, y: 1, z: 0}
+  rotationAnchor: {fileID: 0}
+--- !u!114 &262520510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158754259194614970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717ef1c2ae23bf8448819f2c2ea85dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatedObject: {fileID: 0}
+  rotationAngle: 35
+  rotationPoint: {x: 0, y: 1, z: 0}
+  rotationAnchor: {fileID: 0}
+--- !u!114 &262520509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158754259194614970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717ef1c2ae23bf8448819f2c2ea85dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatedObject: {fileID: 0}
+  rotationAngle: 40
+  rotationPoint: {x: 0, y: 1, z: 0}
+  rotationAnchor: {fileID: 0}
+--- !u!114 &262520508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158754259194614970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717ef1c2ae23bf8448819f2c2ea85dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatedObject: {fileID: 0}
+  rotationAngle: 45
+  rotationPoint: {x: 0, y: 1, z: 0}
+  rotationAnchor: {fileID: 0}

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:62a598b301fbb14138d4c1d4e0487a4f6ac04ac1c4d15c836d8e7aeeca40ab1e
-size 357
+# Enabling FBX Integration
+
+- Install *FBX Exporter* 2.0.1 or newer via Package Manager.
+- Add the following dependencies to `Unity.ProBuilder.AddOns.Editor.asmdef` in the "references" array:
+	- "Autodesk.Fbx"
+    - "Unity.Formats.Fbx.Editor"
+- Open *Project Settings* and add `PROBUILDER_FBX_2_0_1_OR_NEWER` to the *Scripting Define Symbols* field.

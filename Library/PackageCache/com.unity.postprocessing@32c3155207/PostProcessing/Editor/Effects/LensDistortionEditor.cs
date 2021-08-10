@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27b7adee2e795756331749b3b5e9d2dea6fbb1893ba13b450c71f465c8236a24
-size 523
+using UnityEngine.Rendering.PostProcessing;
+
+namespace UnityEditor.Rendering.PostProcessing
+{
+    [PostProcessEditor(typeof(LensDistortion))]
+    internal sealed class LensDistortionEditor : DefaultPostProcessEffectEditor
+    {
+        public override void OnInspectorGUI()
+        {
+            if (RuntimeUtilities.isVREnabled)
+                EditorGUILayout.HelpBox("Lens Distortion is available only for non-stereo cameras.", MessageType.Warning);
+
+            base.OnInspectorGUI();
+        }
+    }
+}

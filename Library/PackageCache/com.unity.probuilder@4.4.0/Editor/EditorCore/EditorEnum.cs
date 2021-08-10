@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b7fd3ab2f4c07bcedfb8e59a719e4ca0a16fbc8777aa7bbfd640cfdaaa68ee65
-size 615
+using System;
+
+namespace UnityEditor.ProBuilder
+{
+    /// <summary>
+    /// Where the sceneview toolbar sits in relation the scene view rect.
+    /// </summary>
+    enum SceneToolbarLocation
+    {
+        UpperCenter,
+        UpperLeft,
+        UpperRight,
+        BottomCenter,
+        BottomLeft,
+        BottomRight
+    }
+
+    /// <summary>
+    /// How should Unity represent selected objects?
+    /// </summary>
+    /// <remarks>Editor only.</remarks>
+    [System.Flags]
+    enum SelectionRenderState
+    {
+        None = 0x0,
+        Wireframe = 0x1,
+        Outline = 0x2
+    }
+}

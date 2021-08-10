@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f57ceb2e8437d6add95b0276f5617f7a2ed40c94f0cd4bb4f60998e6275adc2
-size 359
+# Materials
+
+Use this sub-menu to apply specific Material presets to the selection.
+
+![Tools > ProBuilder > Materials menu](images/menu-materials.png)
+
+Select the specific Material preset defined on the [Material Editor window](material-tools.md) to [set the associated Material](workflow-materials.md#apply) on the selected object(s) or element(s).
+

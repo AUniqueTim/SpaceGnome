@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7dd941ab4706da089a097ee5daa024bfb6aa5a1939b52df65433a0511654853b
-size 729
+{
+  "name": "com.unity.toolchain.win-x86_64-linux-x86_64",
+  "displayName": "Toolchain Win Linux x64",
+  "description": "Cross-compilation toolchain to build player target Linux x86_64 on host Windows x86_64",
+  "version": "0.1.18-preview",
+  "unity": "2019.3",
+  "keywords": [
+    "toolchain",
+    "windows",
+    "linux",
+    "cross-compilation"
+  ],
+  "dependencies": {
+    "com.unity.sysroot": "0.1.18-preview",
+    "com.unity.sysroot.linux-x86_64": "0.1.14-preview"
+  },
+  "upmCi": {
+    "footprint": "b3bc8a559f827946fa0fea5936f46a6b56232404"
+  },
+  "repository": {
+    "url": "https://github.com/Unity-Technologies/com.unity.sysroot.git",
+    "type": "git",
+    "revision": "0d5e7b07c95f3ae15d6d80931a071b042e97189b"
+  }
+}

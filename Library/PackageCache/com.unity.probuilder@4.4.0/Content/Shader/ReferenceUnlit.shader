@@ -1,3 +1,67 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2341d3a9dca87deba4333cd014ad6342bd2a0884c0d6c42deed074ff64c85f92
-size 1426
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "ProBuilder/Reference Unlit"
+{
+    Properties
+    {
+        _MainTex ("Texture", 2D) = "white" {}
+    }
+
+    SubShader
+    {
+        Tags
+        {
+            "Queue"="Transparent"
+            "IgnoreProjector"="True"
+            "RenderType"="Transparent"
+        }
+        
+        Lighting Off
+        ZTest LEqual
+        Blend SrcAlpha OneMinusSrcAlpha
+        ZWrite On
+        Cull Off
+        Offset 1,1
+
+        Pass
+        {
+            AlphaTest Greater .25
+
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #include "UnityCG.cginc"
+
+            sampler2D _MainTex;
+
+            struct appdata
+            {
+                float4 vertex : POSITION;
+                float4 texcoord0 : TEXCOORD0;
+            };
+
+            struct v2f
+            {
+                float4 pos : SV_POSITION;
+                float2 uv : TEXCOORD0;
+            };
+
+            v2f vert (appdata v)
+            {
+                v2f o;
+
+                o.pos = UnityObjectToClipPos(v.vertex);
+                o.uv = v.texcoord0.xy;
+
+                return o;
+            }
+
+            half4 frag (v2f i) : COLOR
+            {
+                return tex2D(_MainTex, i.uv);
+            }
+
+            ENDCG
+        }
+    }
+}

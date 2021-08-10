@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d70ac584b358ec0a287f83f0ea5f7d29982eccc460ecf2852387ffc062f2f117
-size 414
+# ![Triangulate icon](images/icons/Object_Triangulate.png) Triangulate (Objects)
+
+The __Triangulate__ tool reduces all polygons to their base triangles. This creates a sharp, faceted appearance.
+
+![Triangulate Object Example](images/TriangulateObject_Example.png)
+
+**Note:** To smooth some of the hard edges, you can [add and remove smoothing groups](workflow-edit-smoothing.md) across the faces of the Mesh.

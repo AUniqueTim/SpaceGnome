@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f25d4afda3e9add54b16564cdcb7e187fdec8cde4a22d722c244294f7228598a
-size 568
+# ![Split Vertices icon](images/icons/Vert_Split.png) Split Vertices
+
+The __Split Vertices__ tool splits a vertex into individual vertices (one for each adjacent face) so that you can move the faces independently.
+
+![Create 4 vertices from the original vertex](images/SplitVerts_Example.png)
+
+> **Note:** When a vertex splits, the newly separated vertices remain in place. This image only shows the vertices apart as a demonstration, to illustrate that the original vertex became four. 
+
+> **Tip:** You can also use this tool with the **Alt/Opt+X** hotkey.
+

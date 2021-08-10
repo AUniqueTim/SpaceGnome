@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:301689c915f225d5565a6ea5c39cabd00518f275e582a893149e9378818170c5
-size 349
+﻿using Newtonsoft.Json;
+
+using PlasticGui.WebApi.Responses;
+
+namespace Unity.PlasticSCM.Editor.WebApi
+{
+    public class UnityPackageBetaEnrollResponse
+    {
+        [JsonProperty("error")]
+        public ErrorResponse.ErrorFields Error { get; set; }
+        [JsonProperty("isBetaEnabled")]
+        public bool IsBetaEnabled { get; set; }
+    }
+}

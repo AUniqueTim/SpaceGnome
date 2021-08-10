@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dd84099b8a7b966c5f6df98621ceea40777d5d78ae16112cbe3216983b058a1c
-size 236
+# Do Nothing
+
+This Virtual Camera __Body__ algorithm does not move the Virtual Camera; it does not modify its position. Choose this algorithm for static shots or for animating the camera position directly with your custom scripts.
+

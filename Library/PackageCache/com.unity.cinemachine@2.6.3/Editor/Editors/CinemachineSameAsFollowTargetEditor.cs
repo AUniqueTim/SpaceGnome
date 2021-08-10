@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f935a8ce8375f84a270e26958e31f3aa63b9ea2e49ec4f7dd0ccaaa4459e975
-size 681
+using UnityEditor;
+using UnityEngine;
+
+namespace Cinemachine.Editor
+{
+    [CustomEditor(typeof(CinemachineSameAsFollowTarget))]
+    internal sealed class CinemachineSameAsFollowTargetEditor : BaseEditor<CinemachineSameAsFollowTarget>
+    {
+        public override void OnInspectorGUI()
+        {
+            BeginInspector();
+            if (Target.FollowTarget == null)
+                EditorGUILayout.HelpBox(
+                    "Same As Follow Target requires a Follow target.  It will set the virtual camera's rotation to be the same as that of the Follow Target.",
+                    MessageType.Warning);
+            DrawRemainingPropertiesInInspector();
+        }
+    }
+}

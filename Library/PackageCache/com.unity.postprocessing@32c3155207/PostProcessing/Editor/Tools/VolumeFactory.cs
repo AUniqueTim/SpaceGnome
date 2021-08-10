@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4893d5dcae94b82cdca6aae738519074068e26dcc1fd05833111fd7957c9ec14
-size 709
+using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
+
+namespace UnityEditor.Rendering.PostProcessing
+{
+    internal static class VolumeFactory
+    {
+        [MenuItem("GameObject/3D Object/Post-process Volume")]
+        static void CreateVolume()
+        {
+            var gameObject = new GameObject("Post-process Volume");
+            var collider = gameObject.AddComponent<BoxCollider>();
+            collider.size = Vector3.one;
+            collider.isTrigger = true;
+            gameObject.AddComponent<PostProcessVolume>();
+
+            Selection.objects = new [] { gameObject };
+            EditorApplication.ExecuteMenuItem("GameObject/Move To View");
+        }
+    }
+}

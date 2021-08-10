@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8a46a08e9dbeed25c17c76cfb533f929490ba1d30e4a44f379baef3f0a2807fb
-size 302
+KdTree
+======
+
+A fast, generic, multi-dimensional Binary Search Tree written in C#
+
+Forked from [codeandcats KdTree](https://github.com/codeandcats/KdTree).
+
+## Changes from KdTree
+
+This branch is modified to compile for .NET Framework 3.5, and removes the non-MIT licensed GeoUtils class.
+

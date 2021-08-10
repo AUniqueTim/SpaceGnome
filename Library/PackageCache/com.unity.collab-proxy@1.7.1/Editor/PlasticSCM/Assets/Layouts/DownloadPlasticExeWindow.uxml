@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4e2c28b3a5105decabb9e68cdf3fa58ddb703996bdd4a047a89bd7dd8cbe297a
-size 576
+<UXML xmlns="UnityEngine.UIElements">
+    <VisualElement name="container">
+        <Label name="title" />
+        <Label name="requireMessage" text="This feature requires Plastic SCM installation." />
+        <Label name="message" />
+        <VisualElement name="progressControlsContainer" />
+        <VisualElement name="footer">
+            <VisualElement class="flex-grow" />
+            <Button name="downloadCloudEdition" />
+            <Button name="downloadEnterpriseEdition" />
+            <Button name="cancel" />
+        </VisualElement>
+    </VisualElement>
+</UXML>

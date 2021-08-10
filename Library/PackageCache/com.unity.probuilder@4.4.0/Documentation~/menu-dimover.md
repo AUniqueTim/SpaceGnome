@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d774a1e9ba8d44133f80f52cf8c5724fdd63c09605ce580afe43af1e4d9c56f
-size 203
+# Dimensions Overlay
+
+Show or hide the dimensions for all three axes. 
+
+![Dimensions Overlay Example](images/menu-dimover.png)
+
+This overlay appears on all Mesh objects, not just ProBuilder Meshes.

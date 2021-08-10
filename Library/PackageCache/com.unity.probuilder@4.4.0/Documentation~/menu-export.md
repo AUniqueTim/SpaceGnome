@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8ed3da60f2e5966d06c41d3aa2f0f13be1b1343ca1b616d05225b5c44354dcad
-size 379
+# Export
+
+![Tools > ProBuilder > Export menu](images/menu-export.png)
+
+## Export Asset
+
+Saves the selection as Unity Mesh `.asset` files.
+
+## Export Obj
+
+Exports the selected object(s) in the OBJ format.
+
+## Export Stl Ascii
+
+Exports the selected object(s) in the STL ASCII format.
+
+## Export Stl Binary
+
+Export the selected object(s) as STL in Binary format.

@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ebfec352c64af982c84b7a1c0580d94b9655777b08a13a3dde5edc7325c1e9d8
-size 500
+﻿using Newtonsoft.Json;
+using PlasticGui.WebApi.Responses;
+
+namespace Unity.PlasticSCM.Editor.WebApi
+{
+    public class TokenExchangeResponse
+    {
+        [JsonProperty("error")]
+        public ErrorResponse.ErrorFields Error { get; set; }
+
+        [JsonProperty("user")]
+        public string User { get; set; }
+
+        [JsonProperty("accessToken")]
+        public string AccessToken { get; set; }
+
+        [JsonProperty("refreshToken")]
+        public string RefreshToken { get; set; }
+    }
+}

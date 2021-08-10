@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68fb68147b0163f0a3b7df16b6824c62347e5ed5dc227140256ad376eea5c938
-size 663
+# ![Set Pivot icon](images/icons/SetPivot.png) Set Pivot (Edges)
+
+Use the __Set Pivot__ tool to move the pivot point of this Mesh to the average center of the selected edges.
+
+> **Tip:** You can also use this tool with the **Ctrl/Cmd+J** hotkey.
+
+
+
+![Centering the pivot on selected Edges](images/Edge_SetPivot.png)
+
+In this example:
+* **Left panel**: The pivot point of the door is at its bottom-left corner. 
+* **Middle panel**: Two edges are selected on the opposite side, so the __Set Pivot__ tool changes the pivot to the center of those top edges. 
+* **Right panel**: The pivot point is now at the top right, even when in Object editing mode.

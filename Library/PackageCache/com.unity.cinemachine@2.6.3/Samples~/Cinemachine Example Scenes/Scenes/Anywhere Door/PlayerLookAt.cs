@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c86e668e30ed728b2b0361fd4b06b923e42b9450415a037356b895304ffa4d9d
-size 394
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerLookAt : MonoBehaviour
+{
+	public float speed = 5f;
+
+	void Update()
+	{
+		
+		float horizontal = Input.GetAxis("Mouse X") * speed;
+		float vertical = Input.GetAxis("Mouse Y") * speed;
+
+		transform.Rotate(0f, horizontal, 0f, Space.World);
+		transform.Rotate(-vertical, 0f, 0f, Space.Self);
+
+	}
+}

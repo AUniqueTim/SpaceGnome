@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72401e832b352f9cf183b540e8a026464222c1dcd7f99580f609aa954b621a45
-size 650
+# ![Set Pivot icon](images/icons/SetPivot.png) Set Pivot (Faces)
+
+Use the __Set Pivot__ tool to move the pivot point of this Mesh to the average center of the selected faces.
+
+> **Tip:** You can also use this tool with the **Ctrl/Cmd+J** hotkey.
+
+
+
+![Centering the pivot on selected Faces](images/Face_SetPivot.png)
+
+In this example:
+* **Left panel**: The pivot point of the block tower is at the center of the entire Mesh. 
+* **Middle panel**: The top faces are selected, so the Set Pivot tool changes the pivot to the center of those top faces. 
+* **Right panel**: The pivot point is now at the top, even when in Object editing mode.

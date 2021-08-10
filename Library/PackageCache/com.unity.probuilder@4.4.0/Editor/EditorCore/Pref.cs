@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:78eda86473c8ae6e2c6b434157a41fb648b3b3be2003067ff3afa9f67a6073bd
-size 578
+using UnityEditor.SettingsManagement;
+
+namespace UnityEditor.ProBuilder
+{
+    sealed class Pref<T> : UserSetting<T>
+    {
+        public Pref(string key, T value, SettingsScope scope = SettingsScope.Project)
+            : base(ProBuilderSettings.instance, key, value, scope)
+        {}
+
+        public Pref(Settings settings, string key, T value, SettingsScope scope = SettingsScope.Project)
+            : base(settings, key, value, scope) {}
+
+        public static implicit operator T(Pref<T> pref)
+        {
+            return pref.value;
+        }
+    }
+}

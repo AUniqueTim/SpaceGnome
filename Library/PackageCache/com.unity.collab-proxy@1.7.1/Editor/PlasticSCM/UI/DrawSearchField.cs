@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a2025338109e2872dfcc0c0c6370ec17925dd8bdb91626a08ff42c2799bfc7d
-size 853
+﻿using UnityEditor;
+using UnityEditor.IMGUI.Controls;
+using UnityEngine;
+
+using PlasticGui;
+
+namespace Unity.PlasticSCM.Editor.UI
+{
+    internal static class DrawSearchField
+    {
+        internal static void For(
+            SearchField searchField,
+            TreeView treeView,
+            float width)
+        {
+            Rect searchFieldRect = GUILayoutUtility.GetRect(
+                width / 2, EditorGUIUtility.singleLineHeight);
+            searchFieldRect.y += 2;
+
+            treeView.searchString = searchField.OnToolbarGUI(
+                searchFieldRect, treeView.searchString);
+
+            if (!string.IsNullOrEmpty(treeView.searchString))
+                return;
+
+            GUI.Label(searchFieldRect, PlasticLocalization.GetString(
+                PlasticLocalization.Name.SearchTooltip), UnityStyles.Search);
+        }
+    }
+}

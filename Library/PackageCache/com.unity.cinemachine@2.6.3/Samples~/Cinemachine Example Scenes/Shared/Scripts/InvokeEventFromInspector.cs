@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b7b02539c8acb4579cdadf4bd0272e38a70b159069058e5b395f21d092ca838
-size 794
+﻿using UnityEngine;
+using UnityEngine.Events;
+
+#if UNITY_EDITOR
+using UnityEditor;
+using Cinemachine.Editor;
+#endif
+
+namespace Cinemachine.Examples
+{
+    public class InvokeEventFromInspector : MonoBehaviour
+    {
+        public UnityEvent Event = new UnityEvent();
+        public void Invoke() { Event.Invoke(); }
+    }
+
+    #if UNITY_EDITOR
+    [CustomEditor(typeof(InvokeEventFromInspector))]
+    public class GenerateEventEditor : BaseEditor<InvokeEventFromInspector>
+    {
+        public override void OnInspectorGUI()
+        {
+            BeginInspector();
+            Rect rect = EditorGUILayout.GetControlRect(true);
+            if (GUI.Button(rect, "Invoke", "Button"))
+                Target.Invoke();
+            DrawRemainingPropertiesInInspector();
+        }
+    }
+    #endif
+}

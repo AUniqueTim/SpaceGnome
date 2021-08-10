@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b315a2ca8fa71c7987edceeec0c19ce7576c9097464512e0305dc789203a2328
-size 1196
+﻿using UnityEngine;
+
+namespace Cinemachine.Examples
+{
+
+[AddComponentMenu("")] // Don't display in add component menu
+public class ActivateCameraWithDistance : MonoBehaviour
+{
+    public GameObject objectToCheck;
+    public float distanceToObject = 15f;
+    public CinemachineVirtualCameraBase initialActiveCam;
+    public CinemachineVirtualCameraBase switchCameraTo;
+    
+    CinemachineBrain brain;
+
+    void Start()
+    {
+        brain = Camera.main.GetComponent<CinemachineBrain>();
+        SwitchCam(initialActiveCam);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (objectToCheck && switchCameraTo)
+        {
+            if (Vector3.Distance(transform.position, objectToCheck.transform.position) < distanceToObject)
+            {
+                SwitchCam(switchCameraTo);
+            }
+            else
+            {
+                SwitchCam(initialActiveCam);
+            }
+        }
+    }
+
+    public void SwitchCam(CinemachineVirtualCameraBase vcam)
+    {
+        if (brain == null || vcam == null)
+            return;
+        if (brain.ActiveVirtualCamera != (ICinemachineCamera)vcam)
+            vcam.MoveToTopOfPrioritySubqueue();      
+    }
+}
+
+}

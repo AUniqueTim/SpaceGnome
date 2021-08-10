@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ecd1e005e74923d27de60ce23d93d1464d3d714ce1e488b2ef8f58390ea9d05a
-size 575
+namespace UnityEngine.InputSystem.Processors
+{
+    [Scripting.Preserve]
+    internal class InvertVector3Processor : InputProcessor<Vector3>
+    {
+        public bool invertX = true;
+        public bool invertY = true;
+        public bool invertZ = true;
+
+        public override Vector3 Process(Vector3 value, InputControl control)
+        {
+            if (invertX)
+                value.x *= -1;
+            if (invertY)
+                value.y *= -1;
+            if (invertZ)
+                value.z *= -1;
+            return value;
+        }
+    }
+}

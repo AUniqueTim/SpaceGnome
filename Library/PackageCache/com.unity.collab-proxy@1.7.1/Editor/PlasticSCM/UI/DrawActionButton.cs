@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0fb5b29b01743e230145ac46d50fc0d173e6bfb2de862f6c0f3db11efb01aef5
-size 566
+﻿using UnityEditor;
+using UnityEngine;
+
+namespace Unity.PlasticSCM.Editor.UI
+{
+    internal static class DrawActionButton
+    {
+        internal static bool For(string buttonText)
+        {
+            GUIContent buttonContent = new GUIContent(buttonText);
+
+            GUIStyle buttonStyle = EditorStyles.miniButton;
+
+            Rect rt = GUILayoutUtility.GetRect(
+                buttonContent, buttonStyle,
+                GUILayout.MinWidth(UnityConstants.REGULAR_BUTTON_WIDTH));
+
+            return GUI.Button(rt, buttonText, buttonStyle);
+        }
+    }
+}

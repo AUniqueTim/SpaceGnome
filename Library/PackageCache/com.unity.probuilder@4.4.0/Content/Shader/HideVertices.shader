@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e505e306550ad93bb109843971ceafd118c1ac658806c3f54b205f373e1b1582
-size 887
+Shader "Hidden/ProBuilder/HideVertices"
+{
+    SubShader
+    {
+        Tags { "IgnoreProjector"="True" "RenderType"="Geometry" }
+        Lighting Off
+        ZTest On
+        ZWrite On
+        Cull Back
+
+        Pass
+        {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #include "UnityCG.cginc"
+
+            struct appdata
+            {
+                float4 vertex : POSITION;
+            };
+
+            struct v2f
+            {
+                float4 pos : SV_POSITION;
+            };
+
+            v2f vert (appdata v)
+            {
+                v2f o;
+                o.pos = fixed4(0,0,0,0);
+
+                return o;
+            }
+
+            half4 frag (v2f i) : COLOR
+            {
+                return fixed4(0,0,0,0);
+            }
+
+            ENDCG
+        }
+    }
+}

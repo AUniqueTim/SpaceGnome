@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:402d6fbc0477c5845ce9ccad563691fc3cb75fbf84f5a55b4eaadcc64dac6f93
-size 540
+using System;
+using UnityEditor;
+using UnityEngine;
+
+namespace UnityEditor.ProBuilder
+{
+    sealed class HandleGUI : IDisposable
+    {
+        bool m_SrgbWrite;
+
+        public HandleGUI()
+        {
+            Handles.BeginGUI();
+#if !UNITY_2018_2_OR_NEWER
+            m_SrgbWrite = GL.sRGBWrite;
+            GL.sRGBWrite = false;
+#endif
+        }
+
+        public void Dispose()
+        {
+#if !UNITY_2018_2_OR_NEWER
+            GL.sRGBWrite = m_SrgbWrite;
+#endif
+            Handles.EndGUI();
+        }
+    }
+}

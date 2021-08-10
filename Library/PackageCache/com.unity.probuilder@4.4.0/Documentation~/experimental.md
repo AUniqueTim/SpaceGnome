@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f9a793aa7566a956cb864fbac3fb58bff8c245114aba40ab7917c0bfb6bcf46
-size 501
+# Experimental features
+
+ProBuilder has some experimental features:
+
+- [Bezier Shape Tool](bezier.md)
+- [Boolean (CSG) Tool](boolean.md)
+
+These features are still under development; they are not fully tested, and might reduce ProBuilder's stability. Use these with caution.
+
+By default, experimental features are disabled. 
+
+To enable them, enable the [Experimental Features](preferences.html#experimental) preference.
+
+![Unity Preferences window](images/Experimental_Preferences.png)
+

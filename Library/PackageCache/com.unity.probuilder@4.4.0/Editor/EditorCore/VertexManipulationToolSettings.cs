@@ -1,3 +1,57 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56343f737fb28a01d59d585940f57b4e97ed2f54f2143cb4943e801b52645a2d
-size 1739
+using UnityEngine;
+
+namespace UnityEditor.ProBuilder
+{
+    [InitializeOnLoad]
+    static class VertexManipulationToolSettings
+    {
+        const bool k_EnableHandleSettingInput = true;
+
+        static VertexManipulationToolSettings()
+        {
+#if UNITY_2019_1_OR_NEWER
+            SceneView.duringSceneGui += OnSceneGUI;
+#else
+            SceneView.onSceneGUIDelegate += OnSceneGUI;
+#endif
+        }
+
+        static void OnSceneGUI(SceneView view)
+        {
+            if (!EditorUtility.IsDeveloperMode()
+                || !VertexManipulationTool.showHandleSettingsInScene
+                || view != SceneView.lastActiveSceneView)
+                return;
+
+            DoHandleSettings(new Rect(
+                    8,
+                    view.position.height - 40,
+                    400f,
+                    48f));
+        }
+
+        static void DoHandleSettings(Rect rect)
+        {
+            Handles.BeginGUI();
+            using (new EditorGUI.DisabledScope(k_EnableHandleSettingInput))
+            {
+                GUILayout.BeginArea(rect);
+                EditorGUI.BeginChangeCheck();
+
+                GUILayout.BeginHorizontal();
+                EditorGUIUtility.labelWidth = 80;
+
+                EditorGUILayout.EnumPopup("Pivot Point", VertexManipulationTool.pivotPoint);
+                EditorGUILayout.EnumPopup("Orientation", VertexManipulationTool.handleOrientation);
+
+                EditorGUIUtility.labelWidth = 0;
+                GUILayout.EndHorizontal();
+
+                if (EditorGUI.EndChangeCheck())
+                    ProBuilderEditor.Refresh();
+                GUILayout.EndArea();
+            }
+            Handles.EndGUI();
+        }
+    }
+}

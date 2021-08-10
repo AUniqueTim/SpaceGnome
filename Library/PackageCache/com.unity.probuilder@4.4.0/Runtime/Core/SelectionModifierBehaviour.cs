@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5b0c4ac9b0fb834a0ab7f2b390189f7ead28810e7ff1f43147dd01b732575c8
-size 521
+namespace UnityEngine.ProBuilder
+{
+	/// <summary>
+	/// When drag selecting mesh elements, this defines how the Shift key will modify the selection.
+	/// </summary>
+	/// <remarks>Editor only.</remarks>
+	public enum SelectionModifierBehavior
+	{
+		/// <summary>
+		/// Always add to the selection.
+		/// </summary>
+		Add,
+		/// <summary>
+		/// Always subtract from the selection.
+		/// </summary>
+		Subtract,
+		/// <summary>
+		/// Invert the selected faces (default).
+		/// </summary>
+		Difference
+	}
+}

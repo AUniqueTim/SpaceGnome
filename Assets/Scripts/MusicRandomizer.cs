@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d12f34658a5c2e10014277ced2752c1e6dca32e7ec8ddf496acfa91391d8f47e
-size 761
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MusicRandomizer : MonoBehaviour
+{
+    public AudioClip[] audioClips;
+    public AudioSource audioSource;
+    public AudioListener audioListener;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        audioListener = GetComponent<AudioListener>();
+        audioSource = gameObject.GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!audioSource.isPlaying)
+        {
+            PlayRandom();
+        }
+    }
+    public void PlayRandom()
+    {
+        audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+        audioSource.Play();
+       
+    
+    }
+
+
+
+    
+}
+

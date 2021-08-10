@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b9140546cbbc4973dd1c56bfbf203c0832c126962348255b5ee07188ea8b3d35
-size 323
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class RotationEngine : MonoBehaviour
+{
+    public float totalTime = 0;
+
+    public float timeRatio = 1;
+
+  
+    void Update()
+    {
+    }
+    public void FixedUpdate()
+    {
+
+        totalTime += Time.deltaTime * timeRatio;
+    }
+}

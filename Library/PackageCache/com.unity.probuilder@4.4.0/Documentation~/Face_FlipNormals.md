@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f42cb7d103e4d4e494b20a3d4d99e14b3457057c3b0cb1a145450e70fe7ba02
-size 377
+
+
+# ![Flip Normals icon](images/icons/Face_FlipNormals.png) Flip Face Normals
+
+The __Flip Face Normals__ tool flips the normals only on the selected face(s).
+
+![Inside of cube is visible after Normals change](images/FlipFaceNormals_Example.png)
+
+This differs from the [Flip Normals](Object_FlipNormals.md) tool, which flips the normals on every single face on the Mesh.

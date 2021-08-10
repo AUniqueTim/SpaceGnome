@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5150b0b2043248038dbda70b3b802a9cefd6fe1e1e02351ef2d2b7ddc63fca98
-size 336
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraFollowTarget : MonoBehaviour
+{
+    [SerializeField] private GameObject player;
+    [SerializeField] private Vector3 cameraOffset;
+
+    void Update()
+    {
+        transform.position = player.transform.position - cameraOffset;
+    }
+}

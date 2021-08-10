@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aa4287221c2acc1d4791e53e99d59557eee9c43eda2769b0f5c5b57ec0469e96
-size 1061
+using UnityEngine.ProBuilder;
+using UnityEngine;
+
+namespace UnityEditor.ProBuilder.Actions
+{
+    sealed class OpenMaterialEditor : MenuAction
+    {
+        public override ToolbarGroup group { get { return ToolbarGroup.Tool; } }
+        public override Texture2D icon { get { return IconUtility.GetIcon("Toolbar/Panel_Materials", IconSkin.Pro); } }
+        public override TooltipContent tooltip { get { return s_Tooltip; } }
+
+        static readonly TooltipContent s_Tooltip = new TooltipContent
+            (
+                "Material Editor",
+                "Opens the Material Editor window.\n\nThe Material Editor window applies materials to selected faces or objects."
+            );
+
+        public override bool enabled
+        {
+            get { return ProBuilderEditor.instance != null; }
+        }
+
+        public override ActionResult DoAction()
+        {
+            MaterialEditor.MenuOpenMaterialEditor();
+            return new ActionResult(ActionResult.Status.Success, "Open Materials Window");
+        }
+    }
+}

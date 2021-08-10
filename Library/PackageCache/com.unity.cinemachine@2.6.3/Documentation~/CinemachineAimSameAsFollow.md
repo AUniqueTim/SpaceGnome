@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e7b50901c813dc1d2e0f8420eec1ab32c23de158f1edebb21f32db2abcd87b46
-size 292
+# Same As Follow Target
+
+This Virtual Camera __Aim__ algorithm matches the orientation of the __Follow__ target. When used with the __Hard Lock to Target__ algorithm in the __Body__ properties, this algorithm makes the Virtual Camera match the path and rotation of a control GameObject.
+

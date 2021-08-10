@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:673931bfab8e7a54048b063a15bb48e84de4a82e8be6be4abce67f7cac8ddc42
-size 586
+﻿using UnityEditor;
+
+namespace Cinemachine.Editor
+{
+    [CustomEditor(typeof(CinemachineImpulseListener))]
+    [CanEditMultipleObjects]
+    internal sealed class CinemachineImpulseListenerEditor 
+        : BaseEditor<CinemachineImpulseListener>
+    {
+        public override void OnInspectorGUI()
+        {
+            BeginInspector();
+            EditorGUILayout.HelpBox(
+                "The Impulse Listener will respond to signals broadcast by any CinemachineImpulseSource.",
+                MessageType.Info);
+            DrawRemainingPropertiesInInspector();
+        }
+    }
+}

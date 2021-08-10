@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:42b11512af55cf4096b0d3bf357489e35d3a26d3415832d3a838434fb6a1425f
-size 1136
+using UnityEngine.ProBuilder;
+using UnityEngine;
+
+namespace UnityEditor.ProBuilder.Actions
+{
+    sealed class OpenLightmapUVEditor : MenuAction
+    {
+        public override ToolbarGroup group { get { return ToolbarGroup.Tool; } }
+        public override Texture2D icon { get { return null; } }
+        public override TooltipContent tooltip { get { return s_Tooltip; } }
+        public override string menuTitle { get { return "Lightmap UV Editor"; } }
+
+        static readonly TooltipContent s_Tooltip = new TooltipContent
+            (
+                "Lightmap UV Editor",
+                ""
+            );
+
+        public override bool enabled
+        {
+            get { return true; }
+        }
+
+        public override bool hidden
+        {
+            get { return true; }
+        }
+
+        public override ActionResult DoAction()
+        {
+            EditorWindow.GetWindow<LightmapUVEditor>(true, "Lightmap UV Editor", true).position = LightmapUVEditor.desiredPosition;
+            return new ActionResult(ActionResult.Status.Success, "Open Lightmap UV Editor Window");
+        }
+    }
+}

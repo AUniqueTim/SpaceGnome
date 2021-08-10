@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18342f3221e7c00fe3cb75474fe21b602a89d8af4c51f718cf0ec7b1194ec852
-size 1650
+using UnityEngine.ProBuilder;
+using UnityEditor.ProBuilder;
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.ProBuilder.UI;
+
+namespace UnityEditor.ProBuilder.Actions
+{
+    sealed class OpenShapeEditor : MenuAction
+    {
+        public override ToolbarGroup group { get { return ToolbarGroup.Tool; } }
+        public override Texture2D icon { get { return IconUtility.GetIcon("Toolbar/Panel_Shapes", IconSkin.Pro); } }
+        public override TooltipContent tooltip { get { return s_Tooltip; } }
+        public override string menuTitle { get { return "New Shape"; } }
+        public override int toolbarPriority { get { return 0; } }
+        protected override bool hasFileMenuEntry { get { return false; } }
+
+        static readonly TooltipContent s_Tooltip = new TooltipContent
+            (
+                "New Shape Tool",
+                "Opens the Shape Editor window.\n\nThe Shape Editor is a window that allows you to interactively create new 3d primitives.",
+                keyCommandSuper, keyCommandShift, 'K'
+            );
+
+        public override bool enabled
+        {
+            get { return true; }
+        }
+
+        protected override MenuActionState optionsMenuState
+        {
+            get { return MenuActionState.VisibleAndEnabled; }
+        }
+
+        public override ActionResult DoAction()
+        {
+            ShapeEditor.CreateActiveShape();
+            return new ActionResult(ActionResult.Status.Success, "Create Shape");
+        }
+
+        protected override void DoAlternateAction()
+        {
+            ShapeEditor.MenuOpenShapeCreator();
+        }
+    }
+}

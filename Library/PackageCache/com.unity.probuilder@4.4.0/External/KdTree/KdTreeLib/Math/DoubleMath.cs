@@ -1,3 +1,69 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0c3bb7bea44e9e4292292c8a9e49dfd7a344d9643fc6c24416676edee0e6194
-size 1835
+﻿using System;
+
+namespace UnityEngine.ProBuilder.KdTree.Math
+{
+    [Serializable]
+    class DoubleMath : TypeMath<double>
+    {
+        public override int Compare(double a, double b)
+        {
+            return a.CompareTo(b);
+        }
+
+        public override bool AreEqual(double a, double b)
+        {
+            return a == b;
+        }
+
+        public override double MinValue
+        {
+            get { return double.MinValue; }
+        }
+
+        public override double MaxValue
+        {
+            get { return double.MaxValue; }
+        }
+
+        public override double Zero
+        {
+            get { return 0; }
+        }
+
+        public override double NegativeInfinity { get { return double.NegativeInfinity; } }
+
+        public override double PositiveInfinity { get { return double.PositiveInfinity; } }
+
+        public override double Add(double a, double b)
+        {
+            return a + b;
+        }
+
+        public override double Subtract(double a, double b)
+        {
+            return a - b;
+        }
+
+        public override double Multiply(double a, double b)
+        {
+            return a * b;
+        }
+
+        public override double DistanceSquaredBetweenPoints(double[] a, double[] b)
+        {
+            double distance = Zero;
+            int dimensions = a.Length;
+
+            // Return the absolute distance bewteen 2 hyper points
+            for (var dimension = 0; dimension < dimensions; dimension++)
+            {
+                double distOnThisAxis = Subtract(a[dimension], b[dimension]);
+                double distOnThisAxisSquared = Multiply(distOnThisAxis, distOnThisAxis);
+
+                distance = Add(distance, distOnThisAxisSquared);
+            }
+
+            return distance;
+        }
+    }
+}

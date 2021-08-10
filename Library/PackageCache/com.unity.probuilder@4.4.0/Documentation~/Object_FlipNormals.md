@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9456edf31e6cfe3322cae53a6c5eb5f1e6bb41bac81c704ee5fd61966b417b15
-size 336
+# ![Flip Normals icon](images/icons/Object_FlipNormals.png) Flip Normals
+
+The __Flip Normals__ tool flips the normals of *all* faces on the selected object(s). This is especially useful if you want to convert an exterior-modeled shape into an interior space.
+
+![Flip Object Normals Example](images/FlipObjectNormals_Example.png)
+

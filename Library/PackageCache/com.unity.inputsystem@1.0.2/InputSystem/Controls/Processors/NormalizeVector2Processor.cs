@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fd9144659a908df6601cee8c4e409562d4a81e0f5620a49752dd9c652bf35598
-size 302
+namespace UnityEngine.InputSystem.Processors
+{
+    [Scripting.Preserve]
+    internal class NormalizeVector2Processor : InputProcessor<Vector2>
+    {
+        public override Vector2 Process(Vector2 value, InputControl control)
+        {
+            return value.normalized;
+        }
+    }
+}

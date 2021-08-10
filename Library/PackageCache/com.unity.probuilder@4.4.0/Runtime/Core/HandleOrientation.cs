@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:45c6b0fc38ca1dd167ff19646342000dd135f7922d955822666b11c0dbd8902c
-size 1067
+namespace UnityEngine.ProBuilder
+{
+    /// <summary>
+    /// How the handle gizmo is oriented with regards to the current element selection.
+    /// </summary>
+    /// <remarks>
+    /// This overrides the Unity Pivot / Global setting when editing vertices, faces, or edges.
+    /// </remarks>
+    /// <remarks>Editor only.</remarks>
+    public enum HandleOrientation
+    {
+        /// <summary>
+        /// The gizmo is aligned to identity in world space.
+        /// </summary>
+        World = 0,
+
+        /// <summary>
+        /// The gizmo is aligned relative to the active mesh transform. Also called coordinate or model space.
+        /// </summary>
+        ActiveObject = 1,
+
+        /// <summary>
+        /// The gizmo is aligned relative to the currently selected face. When editing vertices or edges, this falls back to <see cref="ActiveObject"/> alignment.
+        /// </summary>
+        ActiveElement = 2,
+
+//      /// <summary>
+//      /// The transform gizmo is user-set.
+//      /// </summary>
+//      Custom = 3
+    }
+}

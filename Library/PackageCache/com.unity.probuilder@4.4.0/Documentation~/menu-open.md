@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1d6f6bdbde4179b934b017494720cfb2ad9bb85eb8ed09338a7a3292fcf056f
-size 530
+# ProBuilder Window
+
+This opens the [ProBuilder toolbar](toolbar.md) and [Edit mode toolbar](edit-mode-toolbar.md) together. 
+
+![ProBuilder toolbar and Edit mode toolbar opens and closes at the same time](images/menu-open.png)
+
+By default, the Edit mode toolbar appears in the upper center of your Unity workspace, and the ProBuilder toolbar appears on the left side. See [Customizing ProBuilder](customizing.md) for information on how to customize the location and appearance of these toolbars and other ProBuilder windows.

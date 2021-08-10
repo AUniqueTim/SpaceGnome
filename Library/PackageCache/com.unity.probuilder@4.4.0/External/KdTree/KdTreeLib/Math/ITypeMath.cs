@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6fbb2b9cab9a4eeb4f17813c7674200ee9c365388d45d2cf8f3c762824dbc533
-size 481
+﻿namespace UnityEngine.ProBuilder.KdTree
+{
+	interface ITypeMath<T>
+	{
+		int Compare(T a, T b);
+
+		T MinValue { get; }
+
+		T MaxValue { get; }
+
+		T Min(T a, T b);
+
+		T Max(T a, T b);
+
+		bool AreEqual(T a, T b);
+
+		bool AreEqual(T[] a, T[] b);
+
+		T Add(T a, T b);
+
+		T Subtract(T a, T b);
+
+		T Multiply(T a, T b);
+
+		T Zero { get; }
+
+		T NegativeInfinity { get; }
+
+		T PositiveInfinity { get; }
+
+		T DistanceSquaredBetweenPoints(T[] a, T[] b);
+	}
+}

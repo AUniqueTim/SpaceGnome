@@ -1,3 +1,50 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3a903632d719dc2c0f7714659e67d787fdd4ef3c0395d5a26d56d6eb2f636a85
-size 1285
+Shader "Hidden/PostProcessing/Texture2DLerp"
+{
+    HLSLINCLUDE
+
+        #include "Packages/com.unity.postprocessing/PostProcessing/Shaders/StdLib.hlsl"
+
+        TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex); // From
+        TEXTURE2D_SAMPLER2D(_To, sampler_To);
+        float _Interp;
+        float4 _TargetColor;
+
+        float4 Frag(VaryingsDefault i) : SV_Target
+        {
+            float4 from = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoord);
+            float4 to = SAMPLE_TEXTURE2D(_To, sampler_To, i.texcoord);
+            return lerp(from, to, _Interp);
+        }
+
+        float4 FragColor(VaryingsDefault i) : SV_Target
+        {
+            float4 from = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoord);
+            float4 to = _TargetColor;
+            return lerp(from, to, _Interp);
+        }
+    ENDHLSL
+
+    SubShader
+    {
+        Cull Off ZWrite Off ZTest Always
+
+        Pass
+        {
+            HLSLPROGRAM
+
+                #pragma vertex VertDefault
+                #pragma fragment Frag
+
+            ENDHLSL
+        }
+        Pass
+        {
+            HLSLPROGRAM
+
+                #pragma vertex VertDefault
+                #pragma fragment FragColor
+
+            ENDHLSL
+        }
+    }
+}

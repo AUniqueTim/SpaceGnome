@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fade768f23992b763ae038d0368984fae7a3e3dbe1f730903fcecbe8c4181f2b
-size 1019
+using System;
+
+namespace UnityEditor.ProBuilder
+{
+    /// <summary>
+    /// Classes inheriting MenuAction and tagged with this attribute will be displayed in the ProBuilderEditor window.
+    /// See [ProBuilder API Examples](https://github.com/Unity-Technologies/ProBuilder-API-Examples) for sample code.
+    /// </summary>
+    /// <example>
+    /// ```
+    /// using UnityEngine;
+    /// using UnityEditor;
+    /// using UnityEngine.ProBuilder;
+    /// using UnityEditor.ProBuilder;
+    /// using UnityEngine.ProBuilder.MeshOperations;
+    ///
+    /// namespace ProBuilder.ExampleActions
+    /// {
+    ///     [ProBuilderMenuAction]
+    ///     public class MyCustomProBuilderMenuAction : MenuAction
+    ///     {
+    ///                 // @todo Write your plugin
+    ///         }
+    /// }
+    /// ```
+    /// </example>
+    /// <seealso cref="MenuAction"/>
+    [AttributeUsage(AttributeTargets.Class)]
+    public sealed class ProBuilderMenuActionAttribute : Attribute
+    {
+    }
+}

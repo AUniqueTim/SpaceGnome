@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d9339139b05f9997851df800516a05cd01f3ec298bc7d9ba6ee91f8b42f49ef
-size 554
+# ![Center Pivot icon](images/icons/CenterPivot.png) Center Pivot
+
+The __Center Pivot__ tool moves the pivot point for the Mesh to the center of the object’s bounds. For example, if you move a lot of vertices on one side of your Mesh, when you try to rotate the object, it rotates around a point outside of the Mesh. 
+
+![Center Pivot example](images/CenterPivot_Example.png)
+
+
+
+> **Note:** If you have multiple objects selected, each object's new pivot point becomes the center of each object, regardless of the position of any other object. 

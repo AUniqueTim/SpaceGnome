@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5efade2b0c567db75163a50ed907dac5515ebc5ece58ef5c139dc2fd53ea1036
-size 613
+fileFormatVersion: 2
+guid: c792d385fd571ce42bd6f62de17fc387
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Calibri
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c2894fbc941b63241b4402a30f91bcac, type: 3}
+  - {fileID: 12800000, guid: 42a0e96a38e6f694ca352465ea6dddaf, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

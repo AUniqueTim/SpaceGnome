@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e342c50eba9c8d10f00635122254b02745b4a7d8427d776783e4f25edfc80924
-size 504
+using UnityEngine.Scripting;
+
+namespace UnityEngine.InputSystem.Processors
+{
+    /// <summary>
+    /// Scale a float value by a constant factor.
+    /// </summary>
+    [Preserve]
+    internal class ScaleProcessor : InputProcessor<float>
+    {
+        [Tooltip("Scale factor to multiply incoming float values by.")]
+        public float factor = 1;
+
+        public override float Process(float value, InputControl control)
+        {
+            return value * factor;
+        }
+    }
+}

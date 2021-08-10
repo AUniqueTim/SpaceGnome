@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:71cc2cf250b1e822c7176f0fabaf1bc73bf184a709a5d015616a0118a3ab45ff
-size 417
+# ![Triangulate Faces icon](images/icons/Face_Triangulate.png) Triangulate Faces
+
+The __Triangulate Faces__ tool reduces selected faces to their base triangles. This creates a faceted, non-smooth appearance. 
+
+![Triangulate Object Example](images/TriangulateObject_Example.png)
+
+> **Tip:** When you triangulate faces, you can smooth the hard edges with the [Smooth Group Editor window](smoothing-groups.md).
+

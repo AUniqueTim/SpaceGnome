@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5abaacb3f0302d66a8e7a2f6903988f69e5450d4c94d7d7c84f5a3c995bc9d4e
-size 827
+# Component and window reference
+
+This section provides information on the following ProBuilder [windows](overview-ui.md#pb_editors) and [components](overview-ui.md#pb_comp):
+
+- [Lightmap UV Editor](lightmap-uv.md)
+- [Material Editor window](material-tools.md)
+- [Poly Shape component](polyshape.md)
+- [Positions Editor window](vertex-positions.md)
+- [Pro Builder Mesh component](ProBuilderMesh.md)
+- [ProBuilder Preferences window](preferences.md)
+- [Shape Tool window](shape-tool.md)
+- [Smooth Group Editor window](smoothing-groups.md)
+- [UV Editor window](uv-editor.md)
+- [Vertex Colors window](vertex-colors.md)
+
+
+
+> **Note:** For documentation on the [Bezier Shape component](bezier.md) and the [Boolean window](boolean.md), see the [Experimental features](experimental.md) section of the documentation.

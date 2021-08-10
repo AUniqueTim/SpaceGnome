@@ -1,3 +1,61 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:047fe8373cfe19d9d53acc0bf22ae570a493ad552fe7f47a024d6ff662c6b5d0
-size 1608
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.ProBuilder.UI;
+using System.Linq;
+using UnityEngine.ProBuilder;
+using UnityEditor.ProBuilder;
+
+namespace UnityEditor.ProBuilder.Actions
+{
+    sealed class SmartSubdivide : MenuAction
+    {
+        public override ToolbarGroup group
+        {
+            get { return ToolbarGroup.Geometry; }
+        }
+
+        public override Texture2D icon
+        {
+            get { return null; }
+        }
+
+        public override TooltipContent tooltip
+        {
+            get { return s_Tooltip; }
+        }
+
+        static readonly TooltipContent s_Tooltip = new TooltipContent
+            (
+                "Smart Subdivide",
+                "",
+                keyCommandAlt, 'S'
+            );
+
+        public override SelectMode validSelectModes
+        {
+            get { return SelectMode.Edge | SelectMode.Face; }
+        }
+
+        public override bool enabled
+        {
+            get { return base.enabled && (MeshSelection.selectedEdgeCount > 0 || MeshSelection.selectedFaceCount > 0); }
+        }
+
+        public override bool hidden
+        {
+            get { return true; }
+        }
+
+        public override ActionResult DoAction()
+        {
+            switch (ProBuilderEditor.selectMode)
+            {
+                case SelectMode.Edge:
+                    return EditorToolbarLoader.GetInstance<SubdivideEdges>().DoAction();
+
+                default:
+                    return EditorToolbarLoader.GetInstance<SubdivideFaces>().DoAction();
+            }
+        }
+    }
+}

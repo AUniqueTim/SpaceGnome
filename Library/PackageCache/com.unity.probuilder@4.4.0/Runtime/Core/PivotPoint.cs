@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3d1f7d9ede0b65301a4b38778cbeb8d3a1b2ce2acdbb63c394876def5d2506c2
-size 740
+namespace UnityEngine.ProBuilder
+{
+    public enum PivotPoint
+    {
+        /// <summary>
+        /// Transforms are applied from the center point of the selection bounding box.
+        /// Corresponds with <see cref="UnityEditor.PivotMode.Center"/>.
+        /// </summary>
+        Center,
+
+        /// <summary>
+        /// Transforms are applied from the origin of each selection group.
+        /// </summary>
+        IndividualOrigins,
+
+        /// <summary>
+        /// Transforms are applied from the active selection center.
+        /// </summary>
+        ActiveElement,
+
+//      /// <summary>
+//      /// Transforms are applied from a user-defined pivot point.
+//      /// </summary>
+//      Custom
+    }
+}

@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27cc59dea505a0f3c63e5b5fb51d794b80617934aa23b8a7a38a27d61eaaee9b
-size 1097
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Toolbox : MonoBehaviour
+{
+    public Timer timerScript;
+    public PickUps pickUpScript;
+    public PlayerManager playerManagerScript;
+    public DanceCombos danceCombos;
+    public PlayerMovement playerMovement;
+    public HighScorePanel highScorePanel;
+    public HighScoreData highScoreData;
+
+    //START SINGLETON
+
+    public static Toolbox instance;
+    public static Toolbox Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<Toolbox>();
+                if (instance == null)
+                {
+                    GameObject singleton = new GameObject();
+                    singleton.AddComponent<Toolbox>();
+                    singleton.name = "(Singleton) Toolbox";
+                }
+            }
+            return instance;
+        }
+    }
+    private void Awake()
+    {
+        instance = this;
+    }
+    private void Update()
+    {
+       timerScript.t = playerManagerScript.time;
+
+        
+    }
+}

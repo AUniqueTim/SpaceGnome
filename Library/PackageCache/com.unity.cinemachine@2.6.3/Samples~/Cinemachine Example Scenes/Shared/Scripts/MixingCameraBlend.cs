@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5a402a3903ce2ff53553e2b2a53f1cb7f80d6beb8096e1bd751d7ce3f37616a5
-size 1244
+﻿using UnityEngine;
+
+namespace Cinemachine.Examples
+{
+
+[AddComponentMenu("")] // Don't display in add component menu
+public class MixingCameraBlend : MonoBehaviour
+{
+    public enum AxisEnum {X,Z,XZ};
+
+    public Transform followTarget;
+    public float initialBottomWeight = 20f;
+    public AxisEnum axisToTrack;
+
+    private CinemachineMixingCamera vcam;
+    
+    void Start()
+    {
+        if (followTarget)
+        {
+            vcam = GetComponent<CinemachineMixingCamera>();
+            vcam.m_Weight0 = initialBottomWeight;
+        }
+    }
+
+    void Update()
+    {
+        if (followTarget)
+        {
+            switch (axisToTrack)
+            {
+                case (AxisEnum.X):
+                    vcam.m_Weight1 = Mathf.Abs(followTarget.transform.position.x);
+                    break;
+                case (AxisEnum.Z):
+                    vcam.m_Weight1 = Mathf.Abs(followTarget.transform.position.z);
+                    break;
+                case (AxisEnum.XZ):
+                    vcam.m_Weight1 =
+                        Mathf.Abs(Mathf.Abs(followTarget.transform.position.x) +
+                                  Mathf.Abs(followTarget.transform.position.z));
+                    break;
+            }
+        }
+    }
+}
+
+}

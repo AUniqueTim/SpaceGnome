@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:33e46b9eae7a32dd7136a91de8481c39d680fac3acf0e8bb29c100c676fa1d8d
-size 1219
+using System.Runtime.InteropServices;
+using UnityEngine.InputSystem.Utilities;
+
+namespace UnityEngine.InputSystem.LowLevel
+{
+    [StructLayout(LayoutKind.Explicit, Size = kSize)]
+    internal struct DualMotorRumbleCommand : IInputDeviceCommandInfo
+    {
+        public static FourCC Type { get { return new FourCC('R', 'M', 'B', 'L'); } }
+
+        internal const int kSize = InputDeviceCommand.kBaseCommandSize + sizeof(float) * 2;
+
+        [FieldOffset(0)]
+        public InputDeviceCommand baseCommand;
+
+        [FieldOffset(InputDeviceCommand.kBaseCommandSize)]
+        public float lowFrequencyMotorSpeed;
+
+        [FieldOffset(InputDeviceCommand.kBaseCommandSize + 4)]
+        public float highFrequencyMotorSpeed;
+
+        public FourCC typeStatic
+        {
+            get { return Type; }
+        }
+
+        public static DualMotorRumbleCommand Create(float lowFrequency, float highFrequency)
+        {
+            return new DualMotorRumbleCommand
+            {
+                baseCommand = new InputDeviceCommand(Type, kSize),
+                lowFrequencyMotorSpeed = lowFrequency,
+                highFrequencyMotorSpeed = highFrequency
+            };
+        }
+    }
+}

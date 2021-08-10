@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a55f87253fac2240f6afcfd04e651576947be834e95b353e11ff71d424354710
-size 746
+﻿using System;
+using System.Reflection;
+using UnityEngine;
+using UnityEditor;
+using UnityEngine.TestTools;
+using NUnit.Framework;
+using System.Collections;
+
+namespace UnityEditor.ProGrids.Tests
+{
+	class ReflectedMethodsExist
+	{
+		[Test]
+		public void AnnotationUtility_ShowGrid()
+		{
+			Assembly editorAssembly = Assembly.GetAssembly(typeof(UnityEditor.Editor));
+			Assert.IsNotNull(editorAssembly, "UnityEditor Assembly");
+			Type annotationUtility = editorAssembly.GetType("UnityEditor.AnnotationUtility");
+			Assert.IsNotNull(annotationUtility, "annotationUtility");
+			PropertyInfo pi = annotationUtility.GetProperty("showGrid", BindingFlags.NonPublic | BindingFlags.Static);
+			Assert.IsNotNull(pi, "AnnotationUtility.showGrid");
+		}
+	}
+}

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7bef9cb5d9d4acc1ee331d1ea2d64ccf53c4786c22f6e828024f5c7003214de4
-size 754
+# ![Invert Selection](images/icons/Selection_Invert.png) Invert Selection
+
+The __Invert Selection__ tool selects the inverse of the current selection: all unselected elements become selected, while the current selection becomes unselected.
+
+![Invert Selection Example](images/InvertSelection_Example.png)
+
+In this example:
+* **Left image**: All tiles except the corners are selected.
+* **Right image**: the __Invert Selection__ tool changes the selection so that only the corners are selected.
+
+This tool is available in the [vertex, edge, and face modes](modes.md).
+
+> **Tip:** You can also use this tool with the **Ctrl/Cmd+Shift+I** hotkey, or from the ProBuilder menu (**Tools** > **ProBuilder** > **Selection** > **Invert Selection**).

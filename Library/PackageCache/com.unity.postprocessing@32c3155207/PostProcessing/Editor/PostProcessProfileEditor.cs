@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:60729d0ed9efc84a6deff3a20503862bde4816941b236024b2aa8c3ec2c97201
-size 771
+using UnityEngine.Rendering.PostProcessing;
+
+namespace UnityEditor.Rendering.PostProcessing
+{
+    [CustomEditor(typeof(PostProcessProfile))]
+    sealed class PostProcessProfileEditor : Editor
+    {
+        EffectListEditor m_EffectList;
+
+        void OnEnable()
+        {
+            m_EffectList = new EffectListEditor(this);
+            m_EffectList.Init(target as PostProcessProfile, serializedObject);
+        }
+
+        void OnDisable()
+        {
+            if (m_EffectList != null)
+                m_EffectList.Clear();
+        }
+
+        public override void OnInspectorGUI()
+        {
+            serializedObject.Update();
+            m_EffectList.OnGUI();
+            serializedObject.ApplyModifiedProperties();
+        }
+    }
+}

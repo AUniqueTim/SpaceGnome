@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2a01b7811611965dacf68f3237aaec6c0f9830db508cce239cd9514dde6ee109
-size 1767
+using UnityEngine.ProBuilder;
+using UnityEngine;
+
+namespace UnityEditor.ProBuilder.Actions
+{
+    sealed class NewBezierShape : MenuAction
+    {
+        const string k_IconPath = "Toolbar/NewBezierSpline";
+
+        public override ToolbarGroup group { get { return ToolbarGroup.Tool; } }
+        public override Texture2D icon { get { return IconUtility.GetIcon(k_IconPath, IconSkin.Pro); } }
+        public override TooltipContent tooltip { get { return _tooltip; } }
+        public override string menuTitle { get { return "New Bezier Shape"; } }
+        public override int toolbarPriority { get { return 1; } }
+
+        static readonly TooltipContent _tooltip = new TooltipContent
+            (
+                "New Bezier Shape",
+                "Creates a new shape that is built by extruding along a bezier spline."
+            );
+
+        public override bool hidden
+        {
+            get { return !Experimental.experimentalFeaturesEnabled; }
+        }
+
+        public override bool enabled
+        {
+            get { return true; }
+        }
+
+        public override ActionResult DoAction()
+        {
+            GameObject go = new GameObject();
+            var bezier = go.AddComponent<BezierShape>();
+            go.GetComponent<MeshRenderer>().sharedMaterial = EditorMaterialUtility.GetUserMaterial();
+            bezier.Init();
+            bezier.Refresh();
+            EditorUtility.InitObject(bezier.GetComponent<ProBuilderMesh>());
+            MeshSelection.SetSelection(go);
+            UndoUtility.RegisterCreatedObjectUndo(go, "Create Bezier Shape");
+            bezier.isEditing = true;
+
+            return new ActionResult(ActionResult.Status.Success, "Create Bezier Shape");
+        }
+    }
+}

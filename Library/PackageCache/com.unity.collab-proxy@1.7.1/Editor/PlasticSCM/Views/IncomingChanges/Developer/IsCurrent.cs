@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:14ba3b01da8d150f242b4ad080d03707d5fc005cc34f19abf3f08efaeca8f156
-size 1243
+﻿using Codice.Client.BaseCommands.Merge;
+using PlasticGui.WorkspaceWindow.IncomingChanges;
+
+namespace Unity.PlasticSCM.Editor.Views.IncomingChanges.Developer
+{
+    // internal for testing purpuses
+    internal static class IsCurrent
+    {
+        internal static bool Conflict(
+            IncomingChangeInfo changeInfo,
+            IncomingChangeInfo metaChangeInfo,
+            MergeSolvedFileConflicts solvedFileConflicts)
+        {
+            if (solvedFileConflicts == null)
+                return false;
+
+            MergeSolvedFileConflicts.CurrentConflict currentConflict;
+
+            if (!solvedFileConflicts.TryGetCurrentConflict(out currentConflict))
+                return false;
+
+            return IsSameConflict(currentConflict, changeInfo) ||
+                   IsSameConflict(currentConflict, metaChangeInfo);
+        }
+
+        static bool IsSameConflict(
+            MergeSolvedFileConflicts.CurrentConflict currentConflict,
+            IncomingChangeInfo changeInfo)
+        {
+            if (changeInfo == null)
+                return false;
+
+            return currentConflict.MountId.Equals(changeInfo.GetMount().Id) &&
+                   currentConflict.ItemId == changeInfo.GetRevision().ItemId;
+        }
+    }
+}

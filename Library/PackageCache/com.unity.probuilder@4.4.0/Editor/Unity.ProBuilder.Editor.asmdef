@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f89cfb5413a68980ac7f97c9f2a610add98fe1a67996e4430b5a891b60ce524d
-size 525
+{
+    "name": "Unity.ProBuilder.Editor",
+    "references": [
+        "Unity.ProBuilder",
+        "Unity.ProBuilder.AssetIdRemapUtility",
+        "Unity.ProBuilder.Stl",
+        "Unity.Settings.Editor",
+        "Unity.ProBuilder.Csg"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e649da714be4b11ffa21512d19a95bb52483d90f602d6bc171634ce36f73e1b0
-size 933
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
+    xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
+    <VisualElement name="loginContainer" class="flex-container main">
+        <Label name="signInLabel" class="title" />
+        <TextField name="email" />
+        <Label name="emailNotification" class="alert-label" />
+        <TextField name="password" password="true" />
+        <Label name="passwordNotification" class="alert-label" />
+        <VisualElement name="buttonContainer" class="row grow">
+            <Button name="back" class="classic-button" />
+            <Button name="signIn" class="classic-button" />
+        </VisualElement>
+        <VisualElement name="progressContainer" />
+    </VisualElement>
+</UXML>

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9002c57d1735bae52bd4a7e39e524fd1b02262d24a7f299d36da3b1473932f31
-size 529
+# ![Bridge Edges icon](images/icons/Edge_Bridge.png) Bridge Edges
+
+The __Bridge Edges__ tool creates a new face between two selected edges. 
+
+By default, this tool can only bridge two open edges (that is, no face on the *open* or *free* side). However, you can override this; to do so, navigate to the Preferences and enable [Allow non-manifold actions](preferences.md#bridge).
+
+![Bridge edges between two planes](images/BridgeEdges_Example.png)
+
+> **Tip:** You can also use this tool with the **Alt/Opt+B** hotkey.
+
+

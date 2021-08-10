@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:caee23c0332340bf74a75fe55161f5c49e692c4b06f4ce7d02432f6c9ce90f57
-size 824
+using UnityEditor;
+using UnityEngine;
+
+namespace Cinemachine.Editor
+{
+    [CustomEditor(typeof(CinemachineHardLookAt))]
+    internal sealed class CinemachineHardLookAtEditor : BaseEditor<CinemachineHardLookAt>
+    {
+        public override void OnInspectorGUI()
+        {
+            BeginInspector();
+            if (Target.LookAtTarget == null)
+                EditorGUILayout.HelpBox(
+                    "Hard Look At requires a LookAt target.  Change Aim to Do Nothing if you don't want a LookAt target.", 
+                    MessageType.Warning);
+            EditorGUI.BeginChangeCheck();
+            GUI.enabled = false;
+            EditorGUILayout.LabelField(" ", "No additional settings", EditorStyles.miniLabel);
+            GUI.enabled = true;
+            DrawRemainingPropertiesInInspector();
+        }
+    }
+}
