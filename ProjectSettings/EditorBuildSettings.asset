@@ -4,9 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Gyms/Platform Gun Gym.unity
     guid: 01e45ecad6410fe449ba35f02df8f9bd
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 543cae5169ba60e4daf574b9a67cd14c, type: 2}
+=======
+  m_Scenes: []
+  m_configObjects: {}
+>>>>>>> 0b1764b62059d2b3457bda16986c999f1c9cb4ed

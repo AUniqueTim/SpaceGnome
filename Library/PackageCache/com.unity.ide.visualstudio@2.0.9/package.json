@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+version https://git-lfs.github.com/spec/v1
+oid sha256:e4b23881429104cef1f4dc0ee6ad1097c4004f05957152428f14cafb21a7866d
+size 769
+=======
+>>>>>>> 0b1764b62059d2b3457bda16986c999f1c9cb4ed
 {
   "name": "com.unity.ide.visualstudio",
   "displayName": "Visual Studio Editor",
@@ -17,6 +25,13 @@
   "repository": {
     "url": "https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git",
     "type": "git",
+<<<<<<< HEAD
     "revision": "c7cd4c6319806423b3d918b3e9599244e3993d41"
   }
 }
+=======
+    "revision": "71581391234ac2cefcaa88813bce724458b5db27"
+  }
+}
+>>>>>>> Stashed changes
+>>>>>>> 0b1764b62059d2b3457bda16986c999f1c9cb4ed

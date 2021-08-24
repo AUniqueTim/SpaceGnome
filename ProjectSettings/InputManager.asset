@@ -114,7 +114,11 @@ InputManager:
     sensitivity: 0.1
     snap: 0
     invert: 0
+<<<<<<< HEAD
     type: 2
+=======
+    type: 1
+>>>>>>> 0b1764b62059d2b3457bda16986c999f1c9cb4ed
     axis: 0
     joyNum: 0
   - serializedVersion: 3
@@ -293,6 +297,7 @@ InputManager:
     type: 0
     axis: 0
     joyNum: 0
+<<<<<<< HEAD
   - serializedVersion: 3
     m_Name: Enable Debug Button 1
     descriptiveName: 
@@ -485,3 +490,5 @@ InputManager:
     type: 0
     axis: 0
     joyNum: 0
+=======
+>>>>>>> 0b1764b62059d2b3457bda16986c999f1c9cb4ed

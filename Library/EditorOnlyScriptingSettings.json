@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"m_DefineSymbols":{"m_Value":[],"m_Initialized":false},"m_AllowUnsafeCode":{"m_Value":false,"m_Initialized":false},"m_ScriptDebugInfoEnabled":{"m_Value":false,"m_Initialized":true}}
+=======
+{"m_DefineSymbols":{"m_Value":[],"m_Initialized":true},"m_AllowUnsafeCode":{"m_Value":false,"m_Initialized":false},"m_ScriptDebugInfoEnabled":{"m_Value":false,"m_Initialized":true}}
+>>>>>>> 0b1764b62059d2b3457bda16986c999f1c9cb4ed
