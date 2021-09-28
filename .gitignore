@@ -64,3 +64,6 @@ sysinfo.txt
 crashlytics-build.properties
 
 >>>>>>> e2dcf3ea4a04427cb71403b18b7cb5ed25f3e07e
+Library/ArtifactDB
+Library/ShaderCache/EditorEncounteredVariants
+Library/SourceAssetDB
