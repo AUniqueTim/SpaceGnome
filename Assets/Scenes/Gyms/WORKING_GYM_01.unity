@@ -6906,7 +6906,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3394
+  m_Name: pb_Mesh-28652
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11017,7 +11017,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3408
+  m_Name: pb_Mesh-28666
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -47038,6 +47038,7 @@ MonoBehaviour:
   frontCamera: {fileID: 7177911531820473023}
   sideCamera: {fileID: 7177911532034352084}
   m_playerMovement: {fileID: 5665586055587726953}
+  playerSpeed: 0
   _move: {x: 0, y: 0}
   _look: {x: 0, y: 0}
   followTransform: {fileID: 5665586055587726952}
@@ -47047,8 +47048,6 @@ MonoBehaviour:
   rotationLerp: 0.5
   camera: {fileID: 7177911533141973560}
   cam: {fileID: 0}
-  vCam1: {fileID: 0}
-  vCam2: {fileID: 0}
 --- !u!114 &7177911531820472643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47327,6 +47326,7 @@ MonoBehaviour:
   frontCamera: {fileID: 7177911531820473023}
   sideCamera: {fileID: 7177911532034352084}
   m_playerMovement: {fileID: 5665586055587726953}
+  playerSpeed: 0
   _move: {x: 0, y: 0}
   _look: {x: 0, y: 0}
   followTransform: {fileID: 5665586055587726952}
@@ -47336,8 +47336,6 @@ MonoBehaviour:
   rotationLerp: 0.5
   camera: {fileID: 7177911533576811130}
   cam: {fileID: 0}
-  vCam1: {fileID: 0}
-  vCam2: {fileID: 0}
 --- !u!114 &7177911532034352088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47628,7 +47626,6 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -47731,7 +47728,6 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

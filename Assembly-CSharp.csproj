@@ -64,7 +64,6 @@
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Scripts\Unused\PlayerAimController.cs" />
      <Compile Include="Assets\Scripts\Unused\CameraRotation.cs" />
-     <Compile Include="Assets\Scripts\Unused\CamY.cs" />
      <Compile Include="Assets\Scripts\FallDamage.cs" />
      <Compile Include="Assets\Scripts\Toolbox.cs" />
      <Compile Include="Assets\Scripts\Moo.cs" />
@@ -98,6 +97,7 @@
      <Compile Include="Assets\Scripts\ObjectInstanstiator.cs" />
      <Compile Include="Assets\Scripts\Unused\CameraAnchorRotation.cs" />
      <Compile Include="Assets\Cradle\TwineTextPlayer\Core\WrapLineBreak.cs" />
+     <Compile Include="Assets\Cinemachine\PostFX\CinemachinePostFX.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\CameraFollowTarget.cs" />
      <Compile Include="Assets\Scripts\Unused\SimpleCameraController.cs" />
@@ -108,6 +108,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\ProCore\ProBuilder\About\ThirdPartyLicenses.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\EffectExamples\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_UnlitVertexColor.shader" />

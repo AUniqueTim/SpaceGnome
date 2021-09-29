@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
     //public float camRotationSpeed;
     //public float camSpeed;
 
-    private float playerSpeed;
+    public float playerSpeed;
 
   
     public Vector2 _move;
@@ -34,8 +34,9 @@ public class CameraController : MonoBehaviour
     
     public GameObject camera;
     public Camera cam;
-    [SerializeField] CinemachineVirtualCamera vCam1;
-    [SerializeField] CinemachineVirtualCamera vCam2;
+
+    //[SerializeField] CinemachineVirtualCamera vCam1;
+    //[SerializeField] CinemachineVirtualCamera vCam2;
 
     //public Recentering(bool recenter, float waitTime, float recenteringTime)
     //{

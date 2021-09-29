@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637683912431727556
-    m_Hash: 1907336664
+      ticks: 637684703760719001
+    m_Hash: 4189518487
   m_LockFileStatus:
     m_FilePath: C:/Users/twwca/Desktop/SpaceGnome/SpaceGnome/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637683912431737530
-    m_Hash: 1609134470
+      ticks: 637684703760748943
+    m_Hash: 1351954899
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -121,12 +121,12 @@ m_PackageAssets:
         url: 
         revision: 
         path: 
-    - packageId: com.unity.cinemachine@2.7.4
+    - packageId: com.unity.cinemachine@2.7.8
       testable: 0
       isDirectDependency: 1
-      version: 2.7.4
+      version: 2.7.8
       source: 1
-      resolvedPath: C:\Users\twwca\Desktop\SpaceGnome\SpaceGnome\Library\PackageCache\com.unity.cinemachine@2.7.4
+      resolvedPath: C:\Users\twwca\Desktop\SpaceGnome\SpaceGnome\Library\PackageCache\com.unity.cinemachine@2.7.8
       assetPath: Packages/com.unity.cinemachine
       name: com.unity.cinemachine
       displayName: Cinemachine
@@ -257,13 +257,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637587723470000000
+      datePublishedTicks: 637654221180000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: git+https://github.com/Unity-Technologies/com.unity.cinemachine.git
-        revision: 803199910e6565c7fc162aa6ba9a899af633b2ff
+        revision: 824e2935edd94d42dcf7b0be3b7e15e7f4da8647
         path: 
     - packageId: com.unity.collab-proxy@1.7.1
       testable: 0
