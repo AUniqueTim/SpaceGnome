@@ -97,7 +97,6 @@
      <Compile Include="Assets\Scripts\ObjectInstanstiator.cs" />
      <Compile Include="Assets\Scripts\Unused\CameraAnchorRotation.cs" />
      <Compile Include="Assets\Cradle\TwineTextPlayer\Core\WrapLineBreak.cs" />
-     <Compile Include="Assets\Cinemachine\PostFX\CinemachinePostFX.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\CameraFollowTarget.cs" />
      <Compile Include="Assets\Scripts\Unused\SimpleCameraController.cs" />
@@ -108,7 +107,6 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\ProCore\ProBuilder\About\ThirdPartyLicenses.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\EffectExamples\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_UnlitVertexColor.shader" />
@@ -386,6 +384,9 @@
  </Reference>
  <Reference Include="KdTreeLib">
  <HintPath>C:/Users/twwca/Desktop/SpaceGnome/SpaceGnome/Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
+ </Reference>
+ <Reference Include="clipper_library">
+ <HintPath>C:/Users/twwca/Desktop/SpaceGnome/SpaceGnome/Library/PackageCache/com.unity.cinemachine@2.7.8/Runtime/ThirdParty/clipper_library.dll</HintPath>
  </Reference>
  <Reference Include="Cradle">
  <HintPath>C:/Users/twwca/Desktop/SpaceGnome/SpaceGnome/Assets/Cradle/Cradle.dll</HintPath>
@@ -806,6 +807,12 @@
  </Reference>
  <Reference Include="Unity.PlasticSCM.Editor">
  <HintPath>C:/Users/twwca/Desktop/SpaceGnome/SpaceGnome/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>C:/Users/twwca/Desktop/SpaceGnome/SpaceGnome/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>C:/Users/twwca/Desktop/SpaceGnome/SpaceGnome/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
  <HintPath>C:/Users/twwca/Desktop/SpaceGnome/SpaceGnome/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
