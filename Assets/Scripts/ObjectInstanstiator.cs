@@ -24,9 +24,9 @@ public class ObjectInstanstiator : MonoBehaviour
     public int maxObjectCount;              //Maximum number of objects that can be instantiated at once.
 
     [Header("Fire Speed")]
-    public int fireSpeed;
+    public int fireSpeed;  //Speed at which instanstiated objects are fired at from firePoint.
 
-    [Header("Random Distance Range From Player")]
+    [Header("Random Distance Range From Player")]       //Minimum and maximum distances from player at which objects can be instantiated for each axis.
     public float xDistanceFromPlayerMin;
     public float xDistanceFromPlayerMax;
     public float yDistanceFromPlayerMin;
@@ -34,7 +34,7 @@ public class ObjectInstanstiator : MonoBehaviour
     public float zDistanceFromPlayerMin;
     public float zDistanceFromPlayerMax;
 
-    public Transform instantiatedObjectParentTransform;
+    public Transform instantiatedObjectParentTransform; //??
 
    Vector3 randomPos;
 

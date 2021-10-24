@@ -146,7 +146,7 @@ public class CameraController : MonoBehaviour
             return;
         }
         float moveSpeed = playerSpeed/* / 100f*/;
-        Vector3 position = (transform.forward * _move.y * moveSpeed) + (transform.right * _move.x * moveSpeed);
+        Vector3 position = (transform.right * _move.x * moveSpeed); /*+ (transform.right * _move.x * moveSpeed);*/ //Need to mnake whole new camera controller script and change transform.forward to transform.right? Or just erase transform.forward part and only use transform.right???
         nextPosition = transform.position + position;
 
 
