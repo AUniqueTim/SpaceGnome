@@ -29,6 +29,9 @@ public class HighScorePanel : MonoBehaviour
     public float hS04;
     public float hS05;
 
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject highScorePanelObject;
+
     //Start Singlton
     public static HighScorePanel instance;
     public static HighScorePanel Instance
@@ -59,6 +62,12 @@ public class HighScorePanel : MonoBehaviour
 
     private void Update()
     {
+
+        if (gameOverPanel.activeInHierarchy)
+        {
+            SaveHighScore(m_playerManager.highScorePanel);
+            LoadHighScoreData();
+        }
         //        highScore.text = m_playerManager.score.ToString();  //Set on GameOver() in PlayerManager.
 
 
@@ -204,11 +213,11 @@ public class HighScorePanel : MonoBehaviour
     //}
     public HighScoreData LoadHighScoreData()
     {
-        //PlayerPrefs.GetFloat(m_playerManager.score.ToString(), hS01);
-        //PlayerPrefs.GetFloat(m_playerManager.score2.ToString(), hS02);
-        //PlayerPrefs.GetFloat(m_playerManager.score3.ToString(), hS03);
-        //PlayerPrefs.GetFloat(m_playerManager.score4.ToString(), hS04);
-        //PlayerPrefs.GetFloat(m_playerManager.score5.ToString(), hS05);
+        PlayerPrefs.GetFloat(m_playerManager.score.ToString(), hS01);
+        PlayerPrefs.GetFloat(m_playerManager.score2.ToString(), hS02);
+        PlayerPrefs.GetFloat(m_playerManager.score3.ToString(), hS03);
+        PlayerPrefs.GetFloat(m_playerManager.score4.ToString(), hS04);
+        PlayerPrefs.GetFloat(m_playerManager.score5.ToString(), hS05);
 
 
         string path = Application.persistentDataPath + "/HighScoreFile.sco";

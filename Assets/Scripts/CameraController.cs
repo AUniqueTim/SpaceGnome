@@ -10,18 +10,14 @@ public class CameraController : MonoBehaviour
     public GameObject mainCamera;
     public GameObject frontCamera;
     public GameObject sideCamera;
+    public GameObject playerCamera;
 
     public SpaceGnome_02_InputActions camControls;
-   // public SpaceGnome_02_InputActions playerControls;
+   
     public PlayerMovement m_playerMovement;
-
-    //public float playerRotationSpeed;
-    //public float camRotationSpeed;
-    //public float camSpeed;
 
     public float playerSpeed;
 
-  
     public Vector2 _move;
     public Vector2 _look;
 
@@ -35,59 +31,21 @@ public class CameraController : MonoBehaviour
     public GameObject camera;
     public Camera cam;
 
-    //[SerializeField] CinemachineVirtualCamera vCam1;
-    //[SerializeField] CinemachineVirtualCamera vCam2;
-
-    //public Recentering(bool recenter, float waitTime, float recenteringTime)
-    //{
-
-    //}
-
-
     private void Awake()
     {
-       
         playerSpeed = m_playerMovement.playerSpeed;
-       // playerControls = new SpaceGnome_02_InputActions();
+       
         camControls = new SpaceGnome_02_InputActions();
 
         camControls.Camera.ChangeCamera.performed += ctx => SwitchCamera();
-
-        // camControls.Camera.RotateCamera.performed += ctx => camRot = ctx.ReadValue<Vector2>();
-        // camControls.Camera.RotateCamera.canceled += ctx => camRot = Vector3.zero;
-
-        //  playerControls.Player.Rotate.performed += ctx => playerRot = ctx.ReadValue<Vector2>();
-        //   playerControls.Player.Rotate.canceled += ctx => playerRot = Vector2.zero;
-
+       
     }
-
-
     private void Update()
     {
-
-       // if (cam.gameObject.transform.rotation.x > 45) { cam.gameObject.transform.Rotate(-10,0,0); }
-        //if (m_playerMovement.transform.position != null) { vCam1.transform.LookAt(new Vector3(m_playerMovement.transform.position.x, m_playerMovement.transform.position.y, m_playerMovement.transform.position.z)); }
-        //else { vCam1 = vCam2; }
-       // camera.LookAtTargetPosition(transform.position);
-
-        //if (!vCam1.gameObject.activeInHierarchy)
-        //{
-        //    vCam1.FollowTargetAttachment = vCam2.FollowTargetAttachment;
-        //    vCam1.LookAtTargetAttachment = vCam2.follow
-        //}
-
         _move = new Vector3(m_playerMovement.playerRotation.x, m_playerMovement.playerRotation.y, m_playerMovement.playerRotation.z);
         _look = new Vector3(m_playerMovement.playerRotation.x, m_playerMovement.playerRotation.y, m_playerMovement.playerRotation.z);
 
-        ////------------NEW CODE START
-        #region Player Based Rotation
-
-        //Move the player based on the X input on the controller
-        //transform.rotation *= Quaternion.AngleAxis(_look.x * rotationPower, Vector3.up);
-
-        #endregion
-
-        #region Follow Transform Rotation
+       #region Follow Transform Rotation
 
         //Rotate the Follow Target transform based on the input
         if (followTransform != null)
@@ -146,7 +104,7 @@ public class CameraController : MonoBehaviour
             return;
         }
         float moveSpeed = playerSpeed/* / 100f*/;
-        Vector3 position = (transform.right * _move.x * moveSpeed); /*+ (transform.right * _move.x * moveSpeed);*/ //Need to mnake whole new camera controller script and change transform.forward to transform.right? Or just erase transform.forward part and only use transform.right???
+        Vector3 position = (transform.right * _move.x * moveSpeed); 
         nextPosition = transform.position + position;
 
 
@@ -167,20 +125,32 @@ public class CameraController : MonoBehaviour
             {
                 mainCamera.SetActive(true);
                 sideCamera.SetActive(false);
+                frontCamera.SetActive(false);
+                playerCamera.SetActive(false);
             }
 
         else if (frontCamera.activeInHierarchy)
             {
                 sideCamera.SetActive(true);
                 frontCamera.SetActive(false);
-            }
+                mainCamera.SetActive(false);
+                playerCamera.SetActive(false);
+        }
 
         else if (mainCamera.activeInHierarchy)
             {
-                frontCamera.SetActive(true);
+                frontCamera.SetActive(false);
                 mainCamera.SetActive(false);
-            }
-
+                sideCamera.SetActive(false);
+                playerCamera.SetActive(true);
+        }
+        else if (playerCamera.activeInHierarchy)
+        {
+            mainCamera.SetActive(false);
+            sideCamera.SetActive(true);
+            frontCamera.SetActive(false);
+            playerCamera.SetActive(false);
+        }
     }
     public void OnEnable()
     {

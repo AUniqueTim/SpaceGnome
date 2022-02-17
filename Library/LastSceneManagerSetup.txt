@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/CutScenes/ShuttleCutscene.unity
+- path: Assets/Scenes/Gyms/WORKING_GYM_01.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
